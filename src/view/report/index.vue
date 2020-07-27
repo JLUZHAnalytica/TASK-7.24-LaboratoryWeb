@@ -2,10 +2,11 @@
     <div class="mainBox">
         <div class="head">
             <v-text>试验报告</v-text>
-            <el-button @click="downloadpdf()">
+            <el-button :disabled="haveUpload" @click="beforeDownload()">
                 <span><i class="el-icon-download"></i></span>
             </el-button>
         </div>
+        <div id="takePhoto" ref="downloadImage">
         <div class="tBox">
             <div class="tHead">
             <p>实验目的</p>
@@ -40,32 +41,55 @@
             <div class="tHead">
             <p>心得体会</p>
             </div>
-            <div class="shuru">
+            <div v-show="isShow">
                 <el-input
                 type="textarea"
                 :rows="2"
                 placeholder="请输入内容"
                 v-model="textmsg">
                 </el-input>
-                <el-button>提交</el-button>
+                <el-button @click="upload()">提交</el-button> 
             </div>
-        </div>
+            <div v-show="!isShow">
+                <p>{{textmsg}}</p>
+            </div>
+            </div>
+            </div>
+        <!--拍照部分结束-->               
+        <img class="big" :src="dataURL">
     </div>
 </template>
 <script>
-//import html2canvas from 'html2canvas';
+import html2canvas from 'html2canvas';
+
 export default {
     components: {
         //html2canvas
     },
     data(){
         return{
-            textmsg:""
+            textmsg:"",
+            dataURL:"",
+            isShow:true,
+            haveUpload:true,
         }
     },
     methods:{
-        downloadpdf(){
-
+        upload(){
+            this.isShow=!this.isShow;
+            this.haveUpload=false;
+        },
+        download() {
+            html2canvas(this.$refs.downloadImage,{
+                backgroundColor: "#ffffff",  //取消图片白边问题
+                useCORS: true,  //如果是动态加载的图片 获取图片
+            }).then((canvas) => {
+                let dataurl = canvas.toDataURL("image/png");
+                this.dataURL = dataurl;
+            });
+        },
+        beforeDownload(){
+            this.download();                
         }
     }    
 }
