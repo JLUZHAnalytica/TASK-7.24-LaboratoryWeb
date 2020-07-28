@@ -1,12 +1,15 @@
 <template>
     <div class="mainBox">
         <div class="head">
-            <v-text>试验报告</v-text>
+            <img src="@/static/img/2-btn-result@2x.png">
+            <div v-if="haveUpload">
             <a :href="dataURL" download='实验报告.jpg'>
-            <el-button :disabled="haveUpload">
-                <span><i class="el-icon-download"></i></span>
-            </el-button>                
+                <img src="@/static/img/15-btn-download@2x.png">            
             </a>
+            </div>
+            <div v-else>
+                <img src="@/static/img/15-btn-download@2x.png">            
+            </div>
         </div>
         <div id="takePhoto" ref="downloadImage">
         <div class="tBox">
@@ -72,7 +75,7 @@ export default {
             textmsg:"",
             dataURL:"",
             isShow:true,
-            haveUpload:true,
+            haveUpload:false,
         }
     },
     updated(){
@@ -81,7 +84,7 @@ export default {
     methods:{
         upload(){
             this.isShow=!this.isShow;
-            this.haveUpload=false;
+            this.haveUpload=true;
         },
         takePhoto() {
             html2canvas(this.$refs.downloadImage,{
