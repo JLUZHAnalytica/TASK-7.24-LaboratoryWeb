@@ -39,11 +39,11 @@ export  const constantRoutes =[
     {
         path:'/nav',
         component:nav,//导航页面 对应C2
-    }
-//     {
-//         path:'/risk_test',
-//         component:risk_test,
-//     }
+    },
+    {
+        path:'/risk_test',
+        component:risk_test,
+     }
 ]
 
 const createRouter = () => new Router({
