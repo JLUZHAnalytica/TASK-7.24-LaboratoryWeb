@@ -2,9 +2,11 @@
     <div class="mainBox">
         <div class="head">
             <v-text>试验报告</v-text>
-            <el-button :disabled="haveUpload" @click="beforeDownload()">
+            <a :href="dataURL" download='实验报告.jpg'>
+            <el-button :disabled="haveUpload">
                 <span><i class="el-icon-download"></i></span>
-            </el-button>
+            </el-button>                
+            </a>
         </div>
         <div id="takePhoto" ref="downloadImage">
         <div class="tBox">
@@ -55,8 +57,7 @@
             </div>
             </div>
             </div>
-        <!--拍照部分结束-->               
-        <img class="big" :src="dataURL">
+        <!--拍照部分结束-->
     </div>
 </template>
 <script>
@@ -74,12 +75,15 @@ export default {
             haveUpload:true,
         }
     },
+    updated(){
+        this.takePhoto();
+    },
     methods:{
         upload(){
             this.isShow=!this.isShow;
             this.haveUpload=false;
         },
-        download() {
+        takePhoto() {
             html2canvas(this.$refs.downloadImage,{
                 backgroundColor: "#ffffff",  //取消图片白边问题
                 useCORS: true,  //如果是动态加载的图片 获取图片
@@ -88,9 +92,6 @@ export default {
                 this.dataURL = dataurl;
             });
         },
-        beforeDownload(){
-            this.download();                
-        }
     }    
 }
 
