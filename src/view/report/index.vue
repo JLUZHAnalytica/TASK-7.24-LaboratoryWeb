@@ -107,8 +107,9 @@ export default {
     .mainBox{
         margin: 0;
         padding: 0;
-        height: 1000px;
+        height: 500px;
         background: url("c15-img/15-bg@2x.png");
+        background-size: 100% 100%;
     }
     .tHead{
         text-align: left;

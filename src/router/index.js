@@ -6,6 +6,7 @@ import login from '@/view/login/index'
 import nav from '@/view/main/index'
 import risk_test from '@/view/risk_test/index'
 import report from '@/view/report/index'
+import report2 from '@/view/report/index2'
 
 Vue.use(Router)
 
@@ -34,6 +35,10 @@ export const constantRoutes = [{
     {
         path: '/report',
         component: report, //实验报告页面 对应C15
+    },
+    {
+        path: '/report2',
+        component: report2, //实验报告页面 对应C15
     },
     {
         path: '/nav',
