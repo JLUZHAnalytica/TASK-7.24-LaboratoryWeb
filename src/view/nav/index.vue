@@ -6,10 +6,12 @@
         <el-col :span="8">
           <router-link to="/learn">
             <el-image :src="images[2]"></el-image>
+            <el-image :src="images[12]" style="position: absolute;top: 14%;left: 13%;"></el-image>
           </router-link>
         </el-col>
         <el-col :span="8">
           <el-image style="cursor:pointer" :src="images[1]" @click="centerDialogVisible = true"></el-image>
+          <el-image :src="images[10]" style="position: absolute;top: 14%;left: 46%;"></el-image>
           <el-dialog :visible.sync="centerDialogVisible" width="55%" custom-class="selectMode">
             <el-image :src="images[4]" fit="fill"></el-image>
             <div class="el-dialog-btn">
@@ -17,11 +19,13 @@
                 <el-col :span="10">
                   <router-link to="/main/teach">
                     <el-image :src="images[5]"></el-image>
+                    <el-image :src="images[9]" style="position: absolute;top: 14%;left: 15%;"></el-image>
                   </router-link>
                 </el-col>
                 <el-col :span="10">
                   <router-link to="/main/test">
                     <el-image :src="images[6]"></el-image>
+                    <el-image :src="images[8]" style="position: absolute;top: 14%;left: 57%;"></el-image>
                   </router-link>
                 </el-col>
               </el-row>
@@ -36,6 +40,7 @@
         <el-col :span="8">
           <router-link to="/report">
             <el-image :src="images[3]"></el-image>
+            <el-image :src="images[11]" style="position: absolute;top: 14%;left: 80%;"></el-image>
           </router-link>
         </el-col>
       </el-row>
@@ -57,6 +62,11 @@ export default {
         require("@/assets/4-btn-study@2x.png"),
         require("@/assets/4-btn-exam@2x.png"),
         require("@/assets/4-btn-exit@2x.png"),
+        require('@/assets/4-icon-exam@2x.png'),
+        require('@/assets/4-icon-study@2x.png'),
+        require('@/assets/2-icon-begin@2x.png'),
+        require('@/assets/2-icon-result@2x.png'),
+        require('@/assets/2-icon-study@2x.png')
       ],
     };
   },
