@@ -2,7 +2,7 @@
 <template>
     <div class="background">
         <!-- <img class="big_back" src="@/view/img/1.png"> -->
-        <img class="big_back" src="@/view/img/1(0).png">
+        <img class="big_back" src="@/view/home/img/1(0).png">
         <span class="big_title"><p>任务描述</p></span>
         <span class="big_cont"><p>1、数据准备</p></span>
         <span class="big_content"><p>整理出沪深300、中证500、创业板、标普500、上证国债、上证企业债六类资产的收益数据。</p></span>
@@ -161,7 +161,7 @@ export default {
 
 .step01{
     background-size: 100% 100%;
-    background-image: url("~@/view/img/2.png");
+    background-image: url("~@/view/home/img/2.png");
     z-index: 1;
     position: absolute;
     bottom: 0; 
@@ -172,7 +172,7 @@ export default {
 }
 .step02{
     background-size: 100% 100%;
-    background-image: url("~@/view/img/3.png");
+    background-image: url("~@/view/home/img/3.png");
     z-index: 1;
     position: absolute;
     bottom: 0; 
