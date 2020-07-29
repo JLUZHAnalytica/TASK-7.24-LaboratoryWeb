@@ -1,14 +1,14 @@
 <template>
     <div class="mainBox">
         <div class="head">
-            <img src="@/static/img/2-btn-result@2x.png">
+            <!-- <img src="@/assets/2-btn-result@2x.png"> -->
             <div v-if="haveUpload">
             <a :href="dataURL" download='实验报告.jpg'>
-                <img src="@/static/img/15-btn-download@2x.png">            
+                <img src="@/assets/15-btn-download@2x.png">            
             </a>
             </div>
             <div v-else>
-                <img src="@/static/img/15-btn-download@2x.png">            
+                <img src="@/assets/15-btn-download@2x.png">            
             </div>
         </div>
         <div id="takePhoto" ref="downloadImage">
@@ -100,9 +100,15 @@ export default {
 
 </script>
 <style>
+    html{
+        background-image: url("c15-img/3-bg@2x.png") ;
+        background-size: 100% 100%;
+    }
     .mainBox{
         margin: 0;
         padding: 0;
+        height: 1000px;
+        background: url("c15-img/15-bg@2x.png");
     }
     .tHead{
         text-align: left;
