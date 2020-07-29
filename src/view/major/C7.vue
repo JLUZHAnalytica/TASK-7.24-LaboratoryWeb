@@ -1,10 +1,11 @@
+
 // in&out输入是图片不是输入框;button定义图标
 <template>
     <div class="background">
         <!-- <img class="big_back" src="@/view/img/1.png"> -->
         <img class="big_back" src="@/view/major/img/7.png">
         <span class="big_title"><p>任务说明</p></span>
-        <span class="big_content"><p>根据我国资本市场实际情况，本实验项目设定可选取的资产大类有六类：国内股市(大盘股，中盘股，小盘股)，国外股市(美股)，国内债券，(国债，企业债)，货币基金。由于是被动投资，考虑历史数据长短问题，上述资产分别以沪深300，中证500创业板标普500，上证国债，上证企业债为代表。</p></span>
+        <span class="big_content">根据我国资本市场实际情况，本实验项目设定可选取的资产大类有六类：国内股市(大盘股，中盘股，小盘股)，国外股市(美股)，国内债券，(国债，企业债)，货币基金。由于是被动投资，考虑历史数据长短问题，上述资产分别以沪深300，中证500创业板标普500，上证国债，上证企业债为代表。</span>
         <el-button plain class="return">返回</el-button>
         <div class="icon">
             <el-button icon="step01" circle></el-button>

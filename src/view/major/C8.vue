@@ -60,7 +60,7 @@ export default {
     z-index: 1;
     position: absolute; 
     bottom: 0; 
-    left: 40px;
+    left: 10px;
     color: white;
     width:100px;
     height:70px;
@@ -116,7 +116,7 @@ export default {
     left: 755px;
     width:231px;
     height:50px;
-    top:473px;
+    top:475px;
 }
 .down{
     z-index: 1;
@@ -125,7 +125,7 @@ export default {
     left: 986px;
     width:231px;
     height:50px;
-    top:473px;
+    top:475px;
 }
 .go{
     z-index: 1;
