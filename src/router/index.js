@@ -2,7 +2,13 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import learn from '@/view/learn/index'
 import login from '@/view/login/index'
-//import main from '@/view/main/index'
+import major7 from '@/view/main/C7'
+import major8 from '@/view/main/C8'
+import major9 from '@/view/main/C9'
+import major10 from '@/view/main/C10'
+import major11 from '@/view/main/C11'
+import major12 from '@/view/main/C12'
+import major13 from '@/view/main/C13'
 import nav from '@/view/main/index'
 import risk_test from '@/view/risk_test/index'
 import report from '@/view/report/index'
@@ -19,8 +25,8 @@ export const constantRoutes = [{
         component: learn, //基础知识学习页面 对应C3
     },
     // {
-    //     path:'/main',
-    //     component:main,
+    //     path:'/major',
+    //     component:major,
     //     children:[
     //         {
     //         path:'/teach',//教学模式
@@ -32,6 +38,34 @@ export const constantRoutes = [{
     //         }
     //     ]
     // },
+    {
+        path: '/major7',
+        component: major7, //对应C7
+    },
+    {
+        path: '/major8',
+        component: major7, //对应C8
+    },
+    {
+        path: '/major9',
+        component: major7, //对应C9
+    },
+    {
+        path: '/major10',
+        component: major7, //对应C10
+    },
+    {
+        path: '/major11',
+        component: major7, //对应C11
+    },
+    {
+        path: '/major12',
+        component: major7, //对应C12
+    },
+    {
+        path: '/major13',
+        component: major7, //对应C13
+    },
     {
         path: '/report',
         component: report, //实验报告页面 对应C15
