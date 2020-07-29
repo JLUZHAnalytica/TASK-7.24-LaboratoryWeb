@@ -2,7 +2,7 @@
 <template>
     <div class="background">
         <!-- <img class="big_back" src="@/view/img/1.png"> -->
-        <img class="big_back" src="@/view/home/img/7.png">
+        <img class="big_back" src="@/view/major/img/7.png">
         <span class="big_title"><p>任务说明</p></span>
         <span class="big_content"><p>根据我国资本市场实际情况，本实验项目设定可选取的资产大类有六类：国内股市(大盘股，中盘股，小盘股)，国外股市(美股)，国内债券，(国债，企业债)，货币基金。由于是被动投资，考虑历史数据长短问题，上述资产分别以沪深300，中证500创业板标普500，上证国债，上证企业债为代表。</p></span>
         <el-button plain class="return">返回</el-button>
@@ -10,7 +10,7 @@
             <el-button icon="step01" circle></el-button>
             <el-button icon="step02" circle></el-button>
         </div>
-        <img class="form" src="@/view/home/img/7-1.png">
+        <img class="form" src="@/view/major/img/7-1.png">
         <el-button class="go" type="primary">开始分析</el-button>
     </div>
 
@@ -96,7 +96,7 @@
 
 .step01{
     background-size: 100% 100%;
-    background-image: url("~@/view/home/img/2.png");
+    background-image: url("./img/2.png");
     z-index: 1;
     position: absolute;
     bottom: 0; 
@@ -107,7 +107,7 @@
 }
 .step02{
     background-size: 100% 100%;
-    background-image: url("~@/view/home/img/3.png");
+    background-image: url("./img/3.png");
     z-index: 1;
     position: absolute;
     bottom: 0; 
