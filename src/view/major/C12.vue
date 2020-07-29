@@ -1,7 +1,7 @@
 <template>
     <div class="background">
         <!-- <img class="big_back" src="@/view/img/1.png"> -->
-        <img class="big_back" src="@/view/img/1.png">
+        <img class="big_back" src="@/view/major/img/1.png">
         <div class="icon">
             <el-button icon="step01" circle></el-button>
             <el-button icon="step02" circle></el-button>
@@ -16,13 +16,13 @@
             <el-button class="down" type="primary">调整</el-button>
         </el-row>
         <el-row>
-            <img class="data_1" src="@/view/img/12-1.png">
-            <img class="data_2" src="@/view/img/12-2.png">
+            <img class="data_1" src="@/view/major/img/12-1.png">
+            <img class="data_2" src="@/view/major/img/12-2.png">
         </el-row>
-        <img class="data_2_1" src="@/view/img/12-2-1.png">
+        <img class="data_2_1" src="@/view/major/img/12-2-1.png">
         <span class="name"><p>调仓建议</p></span>
         <el-row>
-            <img class="data_3" src="@/view/img/12-3.png">
+            <img class="data_3" src="@/view/major/img/12-3.png">
         </el-row>
     </div>
 
@@ -166,7 +166,7 @@ export default {
 
 .step01{
     background-size: 100% 100%;
-    background-image: url("~@/view/img/2.png");
+    background-image: url("./img/2.png");
     z-index: 1;
     position: absolute;
     bottom: 0; 
@@ -177,7 +177,7 @@ export default {
 }
 .step02{
     background-size: 100% 100%;
-    background-image: url("~@/view/img/3.png");
+    background-image: url("./img/3.png");
     z-index: 1;
     position: absolute;
     bottom: 0; 
