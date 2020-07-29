@@ -48,27 +48,27 @@ export const constantRoutes = [{
     },
     {
         path: '/major8',
-        component: major7, //对应C8
+        component: major8, //对应C8
     },
     {
         path: '/major9',
-        component: major7, //对应C9
+        component: major9, //对应C9
     },
     {
         path: '/major10',
-        component: major7, //对应C10
+        component: major10, //对应C10
     },
     {
         path: '/major11',
-        component: major7, //对应C11
+        component: major11, //对应C11
     },
     {
         path: '/major12',
-        component: major7, //对应C12
+        component: major12, //对应C12
     },
     {
         path: '/major13',
-        component: major7, //对应C13
+        component: major13, //对应C13
     },
     {
         path: '/report',
