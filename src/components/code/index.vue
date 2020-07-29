@@ -14,7 +14,7 @@ import _CodeMirror from "codemirror";
 // 核心样式
 import "codemirror/lib/codemirror.css";
 // 引入主题后还需要在 options 中指定主题才会生效
-import "codemirror/theme/leetcode.css"; //idea darcula主题样式
+import "./leetcode.css"; //idea darcula主题样式
 import "codemirror/addon/hint/show-hint.css";
 import "codemirror/addon/fold/foldgutter.css";
 import "codemirror/addon/lint/lint.css";
