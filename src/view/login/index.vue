@@ -92,7 +92,6 @@
     height: 50%;
     left: 57%;
     top: 31%;
-    border: 1px solid #409EFF;
   }
   .form-block {
     margin: 10% 15%;
