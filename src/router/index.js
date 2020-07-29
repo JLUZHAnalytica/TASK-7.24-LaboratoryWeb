@@ -13,7 +13,7 @@ import nav from '@/view/main/index'
 import risk_test from '@/view/risk_test/index'
 import report from '@/view/report/index'
 import report2 from '@/view/report/index2'
-
+import answer from '@/view/answer/index'
 Vue.use(Router)
 
 export const constantRoutes = [{
@@ -23,6 +23,10 @@ export const constantRoutes = [{
     {
         path: '/learn',
         component: learn, //基础知识学习页面 对应C3
+    },
+    {
+        path: '/answer',
+        component: answer, //快问快答页面
     },
     // {
     //     path:'/major',

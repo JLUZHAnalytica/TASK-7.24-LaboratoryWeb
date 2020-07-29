@@ -12,7 +12,7 @@
       </router-link>
     </div>
     <div class="return_main">
-      <router-link to="/answer">
+      <router-link to="/nav">
       <p class="return_text">
         返回
       </p>
