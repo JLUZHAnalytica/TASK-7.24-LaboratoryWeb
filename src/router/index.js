@@ -27,7 +27,7 @@ export const constantRoutes = [{
     //         },
     //         {
     //             path:'/test',
-    //             component:text,//考核模式
+    //             component:test,//考核模式
     //         }
     //     ]
     // },
