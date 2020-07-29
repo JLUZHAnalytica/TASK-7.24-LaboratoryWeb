@@ -4,19 +4,18 @@ import learn from '@/view/learn/index'
 import login from '@/view/login/index'
 //import main from '@/view/main/index'
 import nav from '@/view/main/index'
-//import risk_test from '@/view/risk_test/index'
+import risk_test from '@/view/risk_test/index'
 import report from '@/view/report/index'
 
 Vue.use(Router)
 
-export  const constantRoutes =[
-    {
-       path:'/login',
-       component:login,//登录页面 对应C1
+export const constantRoutes = [{
+        path: '/login',
+        component: login, //登录页面 对应C1
     },
     {
-        path:'/learn',
-        component:learn,//基础知识学习页面 对应C3
+        path: '/learn',
+        component: learn, //基础知识学习页面 对应C3
     },
     // {
     //     path:'/main',
@@ -33,17 +32,17 @@ export  const constantRoutes =[
     //     ]
     // },
     {
-        path:'/report',
-        component:report,//实验报告页面 对应C15
+        path: '/report',
+        component: report, //实验报告页面 对应C15
     },
     {
-        path:'/nav',
-        component:nav,//导航页面 对应C2
+        path: '/nav',
+        component: nav, //导航页面 对应C2
     },
     {
-        path:'/risk_test',
-        component:risk_test,
-     }
+        path: '/risk_test',
+        component: risk_test,
+    }
 ]
 
 const createRouter = () => new Router({

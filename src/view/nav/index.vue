@@ -1,93 +1,92 @@
 <template>
-    <div id="background">
-        <el-image
-                :src="images[0]"
-                fit="fill"></el-image>
-        <div class="btn-group">
-            <el-row :gutter="10">
-                <el-col :span="8">
-                    <router-link to="/learn">
-                        <el-image :src="images[2]"></el-image>
-                    </router-link>
+  <div id="background">
+    <el-image :src="images[0]" fit="fill"></el-image>
+    <div class="btn-group">
+      <el-row :gutter="10">
+        <el-col :span="8">
+          <router-link to="/learn">
+            <el-image :src="images[2]"></el-image>
+          </router-link>
+        </el-col>
+        <el-col :span="8">
+          <el-image style="cursor:pointer" :src="images[1]" @click="centerDialogVisible = true"></el-image>
+          <el-dialog :visible.sync="centerDialogVisible" width="55%" custom-class="selectMode">
+            <el-image :src="images[4]" fit="fill"></el-image>
+            <div class="el-dialog-btn">
+              <el-row :gutter="20">
+                <el-col :span="10">
+                  <router-link to="/main/teach">
+                    <el-image :src="images[5]"></el-image>
+                  </router-link>
                 </el-col>
-                <el-col :span="8">
-                    <el-image style="cursor:pointer" :src="images[1]" @click="centerDialogVisible = true"></el-image>
-                    <el-dialog
-                            :visible.sync="centerDialogVisible"
-                            width="55%"
-                            custom-class="selectMode">
-                        <el-image
-                                :src="images[4]"
-                                fit="fill"></el-image>
-                        <div class="el-dialog-btn">
-                            <el-row :gutter="20">
-                                <el-col :span="10">
-                                    <router-link to="/main/teach">
-                                        <el-image :src="images[5]"></el-image>
-                                    </router-link>
-                                </el-col>
-                                <el-col :span="10">
-                                    <router-link to="/main/test">
-                                        <el-image :src="images[6]"></el-image>
-                                    </router-link>
-                                </el-col>
-                            </el-row>
-                        </div>
-                        <el-image :src="images[7]" style="position: fixed;left: 73%;top: 18%;cursor:pointer"
-                                  @click="centerDialogVisible = false"></el-image>
-                    </el-dialog>
+                <el-col :span="10">
+                  <router-link to="/main/test">
+                    <el-image :src="images[6]"></el-image>
+                  </router-link>
                 </el-col>
-                <el-col :span="8">
-                    <router-link to="/report">
-                        <el-image :src="images[3]"></el-image>
-                    </router-link>
-                </el-col>
-            </el-row>
-        </div>
+              </el-row>
+            </div>
+            <el-image
+              :src="images[7]"
+              style="position: fixed;left: 73%;top: 18%;cursor:pointer"
+              @click="centerDialogVisible = false"
+            ></el-image>
+          </el-dialog>
+        </el-col>
+        <el-col :span="8">
+          <router-link to="/report">
+            <el-image :src="images[3]"></el-image>
+          </router-link>
+        </el-col>
+      </el-row>
     </div>
+  </div>
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                centerDialogVisible: false,
-                images:[require('@/assets/2-bg@2x.png'),
-                    require('@/assets/2-btn-begin@2x.png'),
-                    require('@/assets/2-btn-study@2x.png'),
-                    require('@/assets/2-btn-result@2x.png'),
-                    require('@/assets/4-bg@2x.png'),
-                    require('@/assets/4-btn-study@2x.png'),
-                    require('@/assets/4-btn-exam@2x.png'),
-                    require('@/assets/4-btn-exit@2x.png'),]
-            };
-        }
-    }
+export default {
+  data() {
+    return {
+      centerDialogVisible: false,
+      images: [
+        require("@/assets/2-bg@2x.png"),
+        require("@/assets/2-btn-begin@2x.png"),
+        require("@/assets/2-btn-study@2x.png"),
+        require("@/assets/2-btn-result@2x.png"),
+        require("@/assets/4-bg@2x.png"),
+        require("@/assets/4-btn-study@2x.png"),
+        require("@/assets/4-btn-exam@2x.png"),
+        require("@/assets/4-btn-exit@2x.png"),
+      ],
+    };
+  },
+};
 </script>
 
 <style scoped>
-    #background {
-        position:absolute;
-        top:0;
-        bottom:0;
-        left:0;
-        right: 0;
-    }
-    .btn-group {
-        position: absolute;
-        top: 40%;
-        left: 13%;
-    }
-    .el-dialog-btn {
-        position: fixed;
-        top: 29%;
-        left: 29%;
-    }
+#background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.btn-group {
+  position: absolute;
+  top: 40%;
+  left: 13%;
+}
+.el-dialog-btn {
+  position: fixed;
+  top: 29%;
+  left: 29%;
+}
 </style>
 
 <style>
-    .selectMode .el-dialog__body , .el-dialog__header {
-        padding: 0 !important;
-        height: 0;
-    }
+.selectMode .el-dialog__body,
+.el-dialog__header {
+  padding: 0 !important;
+  height: 0;
+}
 </style>
