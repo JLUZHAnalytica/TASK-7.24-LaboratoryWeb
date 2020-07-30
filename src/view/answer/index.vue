@@ -46,8 +46,8 @@
             </ul>
             <div class="op">
                 <!-- <button class="btn" label="上一题" @click="prevQuestion" :disabled="questionIndex === 0" /> -->
-                <button class="btn" label="下一题" primary @click="nextQuestion" :disabled="questionIndex === questions.length - 1" />
-                <button class="btn" label="确定" @click="viewAnswer" :disabled="false" />
+                <!-- <el-button class="btn" label="下一题" primary @click="nextQuestion" :disabled="questionIndex === questions.length - 1" >下一题 </el-button> -->
+                <el-button class="btn" label="确定" @click="viewAnswer" :disabled="false" v-if="state === ''  || state === 'start'">确定</el-button>
             </div>
             <div class="answer_card" v-if="state === 'end'">
             <ul class="answer-list">
@@ -62,10 +62,10 @@
                         </div>
                     </h3>
                     <h3 v-if="question.type === 'judgment' && !isSuccess(question)">
-                        答案：{{ boolToText(question.answer) }}
+                    回答错误，正确答案为：{{ boolToText(question.answer) }}！
                     </h3>
                     <h3 v-if="isSuccess(question)"> 回答正确啦</h3>
-                    <button class="btn" label="下一题" primary @click="restart"/>
+                    <el-button class="btn" label="下一题" primary @click="restart">下一题</el-button>
                 </div>
                 </li>
             </ul>
