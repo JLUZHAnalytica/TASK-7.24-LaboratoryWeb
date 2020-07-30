@@ -3,48 +3,70 @@
         <!-- <img class="big_back" src="@/view/img/1.png"> -->
         <img class="big_back" src="@/view/major/img/1.png">
         <div class="icon">
-            <el-button icon="step01" circle></el-button>
-            <el-button icon="step02" circle></el-button>
+            <el-button type="text" icon="step01" circle @click="centerDialogVisible = true"></el-button>
+            <el-button type="text" icon="step02" circle @click="centerChangeVisible = true"></el-button>
+            <el-dialog
+            title="资产大类的选取"
+            :visible.sync="centerDialogVisible"
+            width="60%"
+            center>
+                <div class="con">
+                    <span class="big_content_1" style="text-indent:2em;">持续性的研究表明，上级投资风险的最佳方式就是进行分散投资，而不是单独投资于某一资产。在建立投资组合之前，我们首先要做的是确定大类资产的选择范围。宏观层面，需要综合考虑在不同的经济周期环境下每一类资产的历史行为特征、风险-收益关系、以及在当前的宏观经济形式下所预测的未来一段时间的大类资产的走势，个体层面，需要综合考虑每个大类资产的收益能力，波动率，与其他资产间的相关性，抗通胀属性手续费等特性，再通过宏观与个体层面的结合，确定最后的大类资产选择范围。</span>
+                    <span class="big_content_2" style="text-indent:2em;">资产大类大致可以分为:权益类，债券类和货币类等，对于每一大类资产结合，我国实行又可以细分很多小类，小类数量不在于多，在于彼此间能够有效的分散掉非系统性风险，使efficient frontier最优，系统选取出来七类资产作为研究对象，分别为：国内股市(大盘股，中盘股，小盘股)，国外股市(美股)，国内债券，(国债，企业债)，货币基金。由于是被动投资，考虑历史数据长短问题，上述七类资产分别以沪深300，中证500，创业板，标普500，上证国债，上证企业债为代表。</span>
+                    <img class="img_7" src="@/view/major/img/7-1.png">
+                </div>
+            </el-dialog>
         </div>
         <el-button plain class="return">返回</el-button>
         <span class="big_title"><p>任务描述</p></span>
-        <span class="big_cont"><p>7、可视化结果分析。</p></span>
-        <span class="big_content_1"><p>提示：</p></span>
-        <span class="big_content_2"><p>点击调试可以返回前几步对代码进行调试，重新生成结果。</p></span>
-        <span class="big_content_3"><p>点击申购，进行购买。</p></span>
+        <span class="big_cont_12"><p>9、调仓</p></span>
+        <span class="big_content_12_1"><p>提示：</p></span>
+        <span class="big_content_12_2"><p>2个月后，根据各类资产计算结果重新调整持仓比例，适当降低xxx类资产仓位，提升xx资产仓位</p></span>
         <el-row>
-            <el-button class="up" type="primary">买入</el-button>
-            <el-button class="down" type="primary">调整</el-button>
+            <el-button class="up_12" type="primary">买入</el-button>
+            <el-button class="down_12" type="primary">调整</el-button>
         </el-row>
         <el-row>
-            <img class="data_1" src="@/view/major/img/10-1.png">
-            <img class="data_2" src="@/view/major/img/10-2.png">
+            <img class="data_1" src="@/view/major/img/12-1.png">
+            <img class="data_2" src="@/view/major/img/12-2.png">
         </el-row>
+        <el-button @click="dialogImgVisible = true">
+            <img class="data_2_1" src="@/view/major/img/12-2-1.png">
+            <span class="name">调仓建议</span>
+        </el-button>
+            <div class="sug_12">
+                <el-dialog 
+                :visible.sync="dialogImgVisible"
+                width="40%"
+                center>
+                    <div style="height:275px"></div>
+                    <img class="img_12" src="@/view/major/img/12-4.png">
+                    <el-button class="but_1" type="primary">调仓</el-button>
+                    <el-button class="but_2" type="primary">不调仓</el-button>
+                </el-dialog>
+            </div>
         <el-row>
-            <img class="data_3" src="@/view/major/img/10-3.png">
-            <img class="data_4" src="@/view/major/img/10-4.png">
+            <img class="data_3" src="@/view/major/img/12-3.png">
         </el-row>
-        <img class="buy" src="@/view/major/img/10.png">
-
-        
-        
-        
     </div>
 
 </template>
 <script>
 export default {
-  data() {
-    return {
-      state1: '',
-      state2: '',
-      state3: '',
-      state4: '',
-      input: ''
-
+    data() {
+        return {
+        centerDialogVisible: false,
+        dialogImgVisible: false
+        };
+    },
+     methods: {
+        open() {
+        this.$alert('', {
+          dangerouslyUseHTMLString: true,
+        });
+        }
     }
-  }
-}
+    }
 </script>
 
 <style>
@@ -70,17 +92,52 @@ export default {
     height:70px;
     top:67px;
 }
-.big_cont{
+.con{
+    height: 355px;
+}
+span.big_content_1{
+    z-index: 1;
+    position: absolute; 
+    line-height: 22px;
+    left: 30px;
+    color:black;
+    width: 710px;
+    height:70px;
+    top: 50px;
+    font-size: 13px;
+}
+span.big_content_2{
+    z-index: 1;
+    position: absolute; 
+    line-height: 22px;
+    left: 30px;
+    color:black;
+    width: 710px;
+    height: 140px;
+    top: 160px;
+    font-size: 13px;
+}
+img.img_7{
+    background-size: 100% 100%;
+    z-index: 1;
+    position: fixed;
+    bottom: 0; 
+    left: 285px;
+    width: 710px;
+    height: 220px;
+    top: 340px;
+}
+.big_cont_12{
     z-index: 1;
     position: absolute; 
     bottom: 0; 
-    left: 40px;
+    left: 0px;
     color: white;
     width:160px;
     height:70px;
     top:110px;
 }
-.big_content_1{
+span.big_content_12_1{
     z-index: 1;
     position: absolute; 
     bottom: 0; 
@@ -93,7 +150,7 @@ export default {
     top:150px;
     font-size: 15px;
 }
-.big_content_2{
+span.big_content_12_2{
     z-index: 1;
     position: absolute; 
     bottom: 0; 
@@ -119,23 +176,23 @@ export default {
     top:257px;
     font-size: 15px;
 }
-.up{
+button.up_12{
     z-index: 1;
     position: absolute;
     bottom: 0; 
-    left: 755px;
+    left: 510px;
     width:231px;
     height:50px;
-    top:447px;
+    top:392px;
 }
-.down{
+button.down_12{
     z-index: 1;
     position: absolute;
     bottom: 0; 
-    left: 986px;
+    left: 750px;
     width:231px;
     height:50px;
-    top:447px;
+    top:392px;
 }
 .go{
     z-index: 1;
@@ -211,35 +268,65 @@ export default {
     height:220px;
     top: 80px;
 }
+.data_2_1{
+    background-size: 100% 100%;
+    z-index: 1;
+    position: fixed;
+    bottom: 0; 
+    left: 1145px;
+    width: 100px;
+    height:40px;
+    top: 85px;
+}
+span.name{
+    z-index: 1;
+    position: absolute; 
+    bottom: 0; 
+    left: 1149px;
+    color: white;
+    width: 95px;
+    height:35px;
+    top: 93px;
+    font-size: 13px;
+
+}
 .data_3{
     background-size: 100% 100%;
     z-index: 1;
     position: fixed;
     bottom: 0; 
     left: 265px;
-    width: 490px;
+    width: 990px;
     height:225px;
     top: 310px;
 }
-.data_4{
-    background-size: 100% 100%;
+.img_12{
+    /* background-size: 100% 100%; */
     z-index: 1;
     position: fixed;
     bottom: 0; 
-    left: 765px;
-    width: 490px;
+    left: 445px;
+    width: 390px;
     height:225px;
-    top: 310px;
+    top: 150px;
 }
-.buy{
-    background-size: 100% 100%;
+.but_1{
     z-index: 1;
-    position: fixed;
+    position: absolute;
     bottom: 0; 
-    left: 270px;
-    width: 495px;
-    height:55px;
-    top: 535px;
+    left: 60px;
+    width: 190px;
+    height:50px;
+    top: 300px;
+}
+.but_2{
+    z-index: 1;
+    position: absolute;
+    bottom: 0; 
+    left: 250px;
+    width: 190px;
+    height:50px;
+    top: 300px;
 }
 </style>
 
