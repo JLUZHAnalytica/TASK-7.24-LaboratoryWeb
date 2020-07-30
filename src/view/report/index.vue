@@ -1,10 +1,10 @@
 <template>
-    <div class="mainBox" id="takePhoto" ref="downloadImage">    
+    <div class="mainBox" id="takePhoto" ref="downloadImage">  
         <div class="head">
             <div v-if="haveUpload" id="ignore">
-                <a :href="dataURL" download='实验报告.jpg'>
+                <button v-print="'#takePhoto'">
                     <img src="@/assets/15-btn-download@2x.png">            
-                </a>
+                </button>
            </div>
             <div v-else>
                 <img src="@/assets/15-btn-download@2x.png">            
@@ -102,11 +102,11 @@
     </div>
 </template>
 <script>
-import html2canvas from 'html2canvas';
-
+import pt from 'vue-print-nb'
+import Vue from 'vue'
 export default {
     components: {
-        //html2canvas
+        //TP,
     },
     data(){
         return{
@@ -127,27 +127,11 @@ export default {
             }]
         }
     },
-    updated(){
-        this.takePhoto();
-    },
     methods:{
         upload(){
             this.isShow=!this.isShow;
             this.haveUpload=true;
-        },
-        takePhoto() {
-            html2canvas(this.$refs.downloadImage,{
-                backgroundColor: "#ffffff",  //取消图片白边问题
-                useCORS: true,  //如果是动态加载的图片 获取图片
-                ignoreElements:(element)=>{
-                if(element.id==='ignore')
-                 return true;
-                },
-            }).then((canvas) => {
-                let dataurl = canvas.toDataURL("image/png");
-                this.dataURL = dataurl;
-            });
-            // this.isShow=true
+            Vue.use(pt);
         },
         onSubmit(){
             // alert('132')
