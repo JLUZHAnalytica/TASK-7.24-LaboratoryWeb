@@ -5,7 +5,7 @@
         <!-- <img class="big_back" src="@/view/img/1(0).png"> -->
         <span class="big_title"><p>任务描述</p></span>
         <div class="all_content">
-            <span class="big_cont"><p>2、计算标的资产的年化收益率</p></span>
+            <span class="big_cont"><p>3、计算标的资产的年化标准差</p></span>
         </div>
         <span class="left_title"><p>开发语言：Python</p></span>
         <span class="con_in"><p>In:</p></span>

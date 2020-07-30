@@ -5,7 +5,8 @@
         <!-- <img class="big_back" src="@/view/img/1(0).png"> -->
         <span class="big_title"><p>任务描述</p></span>
         <div class="all_content">
-            <span class="big_cont"><p>2、计算标的资产的年化收益率</p></span>
+            <span class="big_cont"><p>1、数据准备</p></span>
+            <span class="big_content"><p>整理出沪深300、中证500、创业板、标普500、上证国债、上证企业债六类资产的收益数据。</p></span>
         </div>
         <span class="left_title"><p>开发语言：Python</p></span>
         <span class="con_in"><p>In:</p></span>
