@@ -1,12 +1,12 @@
 <template>
   <div  style="height: 100%; width: 100%;" class="note" :style ="note">
     <div class="header">   <!-- 头部-->
-    <div class="learn">
+    <div class="learn" style="width: 250px;position: absolute;right: 650px;top: 60px;">
        <router-link to="/learn">
              <img src="img/3-tab-study-select@2x.png" >
        </router-link>
     </div>
-    <div class="answer">
+    <div class="answer" style="width: 250px;position: absolute;right: 450px;top: 60px;">
       <router-link to="/answer">
         <img src="img/3-tab-answer-nor@2x.png" >
       </router-link>
@@ -45,18 +45,18 @@
   top: 0px;
   left: 0px;
 }
-.learn{
+/* .learn{
     width: 250px;
     position: absolute;
-    right: 480px;
-    top: 19px;
+    right: 650px;
+    top: 60px;
 }
 .answer{
     width: 250px;
     position: absolute;
-    right: 280px;
-    top: 19px;
-}
+    right: 450px;
+    top: 60px;
+} */
 .return_main{
     text-decoration:none;
     width: 119px;
@@ -73,7 +73,7 @@
     height: 771px;
     width: 71%;
     position: absolute;
-    top: 123px;
+    top: 140px;
     left: 405px;
     margin: auto;
     border-radius: 8px;
