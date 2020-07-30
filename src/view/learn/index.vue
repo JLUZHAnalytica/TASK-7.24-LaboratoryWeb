@@ -11,7 +11,7 @@
         <img src="img/3-tab-answer-nor@2x.png" >
       </router-link>
     </div>
-    <div class="return_main">
+    <div class="return_main" style="text-decoration:none;width: 119px;background: #fff;border-radius: 8px;position: absolute;right: 121px;top: 37px;height: 51px;font-size: 16px;">
       <router-link to="/nav" style="text-decoration: none;">
       <p class="return_text" style="color:#000!important;text-decoration: none;">
         返回
