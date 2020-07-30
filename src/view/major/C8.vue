@@ -16,7 +16,9 @@
             <el-button class="down_8" type="primary">下一步</el-button>
         </el-row>
         <el-button class="go_8" type="primary">运行</el-button>
+        <a href="#/nav">
         <el-button plain class="return">返回</el-button>
+        </a>
         <el-row :inline="true">
             <div class="all_input" >
                 <div class="input_1">

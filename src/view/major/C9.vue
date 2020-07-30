@@ -17,7 +17,9 @@
                 </div>
             </el-dialog>
         </div>
+        <a href="#/nav">
         <el-button plain class="return">返回</el-button>
+        </a>
 
         <span class="big_title"><p>任务描述</p></span>
         <span class="big_cont"><p>7、可视化结果分析。</p></span>

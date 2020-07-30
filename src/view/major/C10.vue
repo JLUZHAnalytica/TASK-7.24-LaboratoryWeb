@@ -17,7 +17,9 @@
                 </div>
             </el-dialog>
         </div>
+        <a href="#/nav">
         <el-button plain class="return">返回</el-button>
+        </a>
         <span class="big_title"><p>任务描述</p></span>
         <span class="big_cont_12"><p>9、调仓</p></span>
         <span class="big_content_12_1"><p>提示：</p></span>
