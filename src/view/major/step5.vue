@@ -5,8 +5,8 @@
         <!-- <img class="big_back" src="@/view/img/1(0).png"> -->
         <span class="big_title"><p>任务描述</p></span>
         <div class="all_content">
-            <span class="big_cont"><p>1、数据准备</p></span>
-            <span class="big_content"><p>整理出沪深300、中证500、创业板、标普500、上证国债、上证企业债六类资产的收益数据。</p></span>
+            <span class="big_cont"><p>5、构建两个组合作为对比。</p></span>
+            <span class="big_content"><p>例如：<br />组合一为：沪深300、中证500、创业板、国债、货币；<br />组合二为：沪深300、中证500、创业板、国债、货币、标普500及企业债。</p></span>
         </div>
         <span class="left_title"><p>开发语言：Python</p></span>
         <span class="con_in"><p>In:</p></span>
@@ -132,11 +132,11 @@ export default {
     bottom: 0; 
     text-align: left;
     line-height: 25px;
-    left: 45px;
+    left: 40px;
     color:white;
     width:170px;
     height:70px;
-    top:150px;
+    top:175px;
     font-size: 15px;
 }
 .con{

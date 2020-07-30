@@ -5,7 +5,8 @@
         <!-- <img class="big_back" src="@/view/img/1(0).png"> -->
         <span class="big_title"><p>任务描述</p></span>
         <div class="all_content">
-            <span class="big_cont"><p>2、计算标的资产的年化收益率</p></span>
+            <span class="big_cont"><p>4、根据整理好的日度收益数据计算相关性系数矩阵。</p></span>
+            <span class="big_content"><p>说明：<br />寻找收益指标相关性不强/甚至是负相关的标的的资产组合</p></span>
         </div>
         <span class="left_title"><p>开发语言：Python</p></span>
         <span class="con_in"><p>In:</p></span>
@@ -131,11 +132,11 @@ export default {
     bottom: 0; 
     text-align: left;
     line-height: 25px;
-    left: 45px;
+    left: 40px;
     color:white;
     width:170px;
     height:70px;
-    top:150px;
+    top:175px;
     font-size: 15px;
 }
 .con{

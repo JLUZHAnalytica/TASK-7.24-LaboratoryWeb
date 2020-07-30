@@ -5,7 +5,7 @@
         <!-- <img class="big_back" src="@/view/img/1(0).png"> -->
         <span class="big_title"><p>任务描述</p></span>
         <div class="all_content">
-            <span class="big_cont"><p>2、计算标的资产的年化收益率</p></span>
+            <span class="big_cont"><p>6、构建两个组合的efficientfrontier</p></span>
         </div>
         <span class="left_title"><p>开发语言：Python</p></span>
         <span class="con_in"><p>In:</p></span>
@@ -131,11 +131,11 @@ export default {
     bottom: 0; 
     text-align: left;
     line-height: 25px;
-    left: 45px;
+    left: 40px;
     color:white;
     width:170px;
     height:70px;
-    top:150px;
+    top:175px;
     font-size: 15px;
 }
 .con{

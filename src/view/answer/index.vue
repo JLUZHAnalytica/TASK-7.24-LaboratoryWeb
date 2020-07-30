@@ -1,19 +1,20 @@
 <template>
   <div  style="height: 100%; width: 100%;" class="note" :style ="note">
     <div class="header">   <!-- 头部-->
+    <!-- <div class="header_bg"><img src="img/headers.jpg" alt="" ></div> -->
     <div class="learn">
        <router-link to="/learn" style="width: 250px;position: absolute;right: 650px;top: 60px;">
-             <img src="img/3-tab-study-nor@2x.png" >
+             <img src="../../assets/3-tab-study-select@2x.png" >
        </router-link>
     </div>
     <div class="answer" style="width: 250px;position: absolute;right: 450px;top: 60px;">
       <router-link to="/answer">
-        <img src="img/3-tab-answer-select@2x.png" >
+        <img src="../../assets/3-tab-answer-nor@2x.png" >
       </router-link>
     </div>
-    <div class="return_main" style="text-decoration:none;width: 119px;background: #fff;border-radius: 8px;position: absolute;right: 121px;top: 37px;height: 51px;font-size: 16px;">
+    <div class="return_main" style="text-decoration:none;width: 143px;background: #fff;border-radius: 8px;position: absolute;right: 51px;top: 38px;height: 34px;font-size: 16px;">
       <router-link to="/nav" style="text-decoration: none;">
-      <p class="return_text" style="color:#000!important;text-decoration: none;">
+      <p class="return_text" style="    color: #6D67EF;text-decoration: none;margin-block-start: 0.4em;">
         返回
       </p>
       </router-link>
@@ -34,14 +35,14 @@
                     class="item"
                     :class="{selected: isSelected(question, true)}"
                     @click="doOption(true);isT">正确
-                    <img v-if="!isChoise(question)" src="img/14-icon-eaxm-nor@2x.png" alt="未选中">
-                    <img v-if="flag==='T' && isChoise(question)" src="img/14-icon-eaxm-yse-select@2x.png" alt="选中">
+                    <img v-if="!isChoise(question)" src="../../assets/14-icon-eaxm-nor@2x.png" alt="未选中">
+                    <img v-if="flag==='T' && isChoise(question)" src="../../assets/14-icon-eaxm-yse-select@2x.png" alt="选中">
                 </li>
                 <li  class="item"
                     :class="{selected: isSelected(question, false)}"
                     @click="doOption(false);isF;">错误</li>
-                    <img v-if="!isChoise(question)" src="img/14-icon-eaxm-nor@2x.png" alt="未选中">
-                    <img v-if="flag==='F' && isChoise(question)" src="img/14-icon-eaxm-yse-select@2x.png" alt="选中">
+                    <img v-if="!isChoise(question)" src="../../assets/14-icon-eaxm-nor@2x.png" alt="未选中">
+                    <img v-if="flag==='F' && isChoise(question)" src="../../assets/14-icon-eaxm-yse-select@2x.png" alt="选中">
             </ul>
             <ul class="options">
                 <li class="item" v-for="(option, index) in question.options"
@@ -91,7 +92,7 @@
   top: 0px;
   left: 0px;
 }
-.learn{
+/* .learn{
     width: 250px;
     position: absolute;
     right: 480px;
@@ -102,36 +103,41 @@
     position: absolute;
     right: 280px;
     top: 19px;
-}
+} */
 .answer_question_box{
-    position: relative;
-    height: 771px;
-    width: 95%;
+    height: 642px;
+    width: 93%;
     position: absolute;
-    top: 123px;
-    left: 46px;
+    top: 145px;
+    left: 69px;
     margin: auto;
     border-radius: 8px;
     opacity: 1;
-    background: rgb(240, 238, 238);
+    background: #F0EFF6;
 }
 .bg_box{
-    position: relative;
-    height: 740px;
-    width: 98%;
+    height: 636px;
+    width: 100%;
     position: absolute;
-    top: 20px;
-    left: 16px;
+    top: 5px;
+    left: -2px;
     margin: auto;
     border-radius: 8px;
     opacity: 1;
 }
 .exam-box{
-  position: absolute;
-  left: 30%;
+    position: absolute;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 li{
-   list-style: none; 
+    list-style: none;
+    margin: 26px;
+    font-size: 1.5em;
+    width: 320px;
+    text-align: left;
+    padding-left: 585px;
 }
 .right_answer{
     position: absolute;
@@ -144,8 +150,22 @@ li{
 }
 .title{
     width: 100%;
+    font-size: 2em;
 }
-
+.li img{
+    position: absolute;
+    left: 141px;
+    top: 179px;
+}
+.index{
+    width: 49px;
+    height: 19px;
+    right: 126px;
+    position: absolute;
+    top: 66px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
 </style>
 <script>
 export default {
@@ -189,7 +209,7 @@ export default {
             state: '', // 'start', 'end',
             flag:'',//T,F,1,2,3,4
           note: {
-          backgroundImage: "url(" + 'img/3-bg@2x.png' + ")",
+          backgroundImage: "url(" + 'img/C3_bg.png' + ")",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize:'100% 100%'
