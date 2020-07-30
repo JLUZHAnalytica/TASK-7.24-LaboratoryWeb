@@ -84,7 +84,7 @@
   top: 0px;
   left: 0px;
 }
-.learn{
+/* .learn{
     width: 250px;
     position: absolute;
     right: 480px;
@@ -95,7 +95,7 @@
     position: absolute;
     right: 280px;
     top: 19px;
-}
+} */
 .answer_question_box{
     position: relative;
     height: 771px;
