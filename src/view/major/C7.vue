@@ -4,8 +4,25 @@
     <div class="background">
         <!-- <img class="big_back" src="@/view/img/1.png"> -->
         <img class="big_back" src="@/view/major/img/7.png">
-        <span class="big_title"><p>任务说明</p></span>
-        <span class="big_content">根据我国资本市场实际情况，本实验项目设定可选取的资产大类有六类：国内股市(大盘股，中盘股，小盘股)，国外股市(美股)，国内债券，(国债，企业债)，货币基金。由于是被动投资，考虑历史数据长短问题，上述资产分别以沪深300，中证500创业板标普500，上证国债，上证企业债为代表。</span>
+        <span class="big_title" style="z-index: 1;
+    position: absolute; 
+    bottom: 0; 
+    left: 50px;
+    color: white;
+    width:100px;
+    height:70px;
+    top:74px; "><p>任务说明</p></span>
+        <span class="big_content" style="z-index: 1;
+    position: absolute; 
+    bottom: 0; 
+    text-align: left;
+    line-height: 25px;
+    left: 67px;
+    color: black;
+    width:1200px;
+    height:70px;
+    top:130px;
+    font-size: 15px;">根据我国资本市场实际情况，本实验项目设定可选取的资产大类有六类：国内股市(大盘股，中盘股，小盘股)，国外股市(美股)，国内债券，(国债，企业债)，货币基金。由于是被动投资，考虑历史数据长短问题，上述资产分别以沪深300，中证500创业板标普500，上证国债，上证企业债为代表。</span>
         <el-button plain class="return">返回</el-button>
         <div class="icon">
             <el-button icon="step01" circle></el-button>
@@ -30,7 +47,7 @@
     background-size: 100% 100%;
 }
 
-.big_title{
+/* .big_title{
     z-index: 1;
     position: absolute; 
     bottom: 0; 
@@ -52,7 +69,7 @@
     height:70px;
     top:130px;
     font-size: 15px;
-}
+} */
 .go{
     z-index: 1;
     position: absolute;
