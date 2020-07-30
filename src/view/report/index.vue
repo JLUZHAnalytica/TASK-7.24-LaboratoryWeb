@@ -49,12 +49,30 @@
                     </div>
                     <div class="tBox">
                         <div class="tHead">
-                        <p class="ctitle">实验结果</p>
+                        <p class="ctitle">实验成绩</p>
                         </div>
                         <div class="tMsg">
-                            <p>
-                                要接收前面实验得出的数据，如图片和文字
-                            </p>
+                            <div>
+                                <!--实验数据-->
+                                <template>
+                                    <el-table
+                                        :data="tableData"
+                                        stripe
+                                        style="width: auto"
+                                        :show-header="showHeader">
+                                        <el-table-column
+                                        prop="lesson"
+                                        label=""
+                                        width="180">
+                                        </el-table-column>
+                                        <el-table-column
+                                        prop="score"
+                                        label=""
+                                        width="180">
+                                        </el-table-column>
+                                    </el-table>
+                                </template>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -99,6 +117,17 @@ export default {
             dataURL:"",
             isShow:true,
             haveUpload:false,
+            showHeader:false,
+            tableData: [{
+            lesson: '快问快答',
+            score: '15',
+            }, {
+            lesson: '考核部分',
+            score: '85',
+            }, {
+            lesson: '总成绩',
+            score: '100',
+            }]
         }
     },
     updated(){
