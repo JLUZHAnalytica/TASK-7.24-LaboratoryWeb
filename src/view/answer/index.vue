@@ -29,13 +29,19 @@
             <h3 class="title" >{{ '【'+type+'】'+question.content }}</h3>
             <div>分数：{{ score }}</div>
             <ul class="options" v-if="question.type === 'judgment'">
-                <input type="checkbox"
+                <li
+
                     class="item"
                     :class="{selected: isSelected(question, true)}"
-                    @click="doOption(true)">正确
-                <input type="checkbox" class="item"
+                    @click="doOption(true);isT">正确
+                    <img v-if="!isChoise(question)" src="img/14-icon-eaxm-nor@2x.png" alt="未选中">
+                    <img v-if="flag==='T' && isChoise(question)" src="img/14-icon-eaxm-yse-select@2x.png" alt="选中">
+                </li>
+                <li  class="item"
                     :class="{selected: isSelected(question, false)}"
-                    @click="doOption(false)">错误
+                    @click="doOption(false);isF;">错误</li>
+                    <img v-if="!isChoise(question)" src="img/14-icon-eaxm-nor@2x.png" alt="未选中">
+                    <img v-if="flag==='F' && isChoise(question)" src="img/14-icon-eaxm-yse-select@2x.png" alt="选中">
             </ul>
             <ul class="options">
                 <li class="item" v-for="(option, index) in question.options"
@@ -48,7 +54,6 @@
                 <!-- <button class="btn" label="上一题" @click="prevQuestion" :disabled="questionIndex === 0" /> -->
                 <!-- <el-button class="btn" label="下一题" primary @click="nextQuestion" :disabled="questionIndex === questions.length - 1" >下一题 </el-button> -->
                 <el-button class="btn" label="确定" @click="viewAnswer" :disabled="false" v-if="state === ''  || state === 'start'">确定</el-button>
-
             </div>
             <div class="answer_card" v-if="state === 'end'">
             <ul class="answer-list">
@@ -181,7 +186,8 @@ export default {
 
                 ],
           question: {},
-                state: '', // 'start', 'end',
+            state: '', // 'start', 'end',
+            flag:'',//T,F,1,2,3,4
           note: {
           backgroundImage: "url(" + 'img/3-bg@2x.png' + ")",
           backgroundRepeat: "no-repeat",
@@ -281,16 +287,31 @@ export default {
                 }
                 return false
             },
-            isDone(question) {
-                
-                if (question.type === 'multiple') {
-                    return question.userAnswer && question.userAnswer.length
-                }
-               
+            isChoise(question) {
                 if (question.type === 'judgment') {
-                    return question.userAnswer === true || question.userAnswer === false
+                    if(!question.userAnswer){
+                        return false
+                    }
                 }
-                return false
+                return true
+            },
+            isT() {
+                this.flag = 'T'
+            },
+            isF() {
+                this.flag = 'F'
+            },
+            isA() {
+                this.flag = '1'
+            },
+            isB() {
+                this.flag = '2'
+            },
+            isC() {
+                this.flag = '3'
+            },
+            isD() {
+                this.flag = '4'
             },
             doOption(index) {
                if (this.question.type === 'multiple') {
@@ -318,10 +339,7 @@ export default {
                 this.questionIndex--
                 this.question = this.questions[this.questionIndex]
             },
-            selectIndex(index) {
-                this.questionIndex = index
-                this.question = this.questions[this.questionIndex]
-            },
+
             nextQuestion() {
                 this.questionIndex++
                 this.question = this.questions[this.questionIndex]
