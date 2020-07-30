@@ -1,10 +1,10 @@
-// in&out输入是图片不是输入框;button定义图标;弹出框边框
+//代码框弹出框边框
 <template>
     <div class="background">
         <img class="big_back" src="@/view/major/img/1.png">
         <!-- <img class="big_back" src="@/view/img/1(0).png"> -->
         <span class="big_title"><p>任务描述</p></span>
-        <div class="content">
+        <div class="all_content">
             <span class="big_cont"><p>1、数据准备</p></span>
             <span class="big_content"><p>整理出沪深300、中证500、创业板、标普500、上证国债、上证企业债六类资产的收益数据。</p></span>
         </div>
@@ -18,7 +18,7 @@
         <el-button class="go_8" type="primary">运行</el-button>
         <el-button plain class="return">返回</el-button>
         <el-row :inline="true">
-            <div class="all_input">
+            <div class="all_input" >
                 <div class="input_1">
                 <el-col :span="11">
                     <el-input
@@ -114,7 +114,7 @@ export default {
     height:70px;
     top:67px;
 }
-.content{
+.all_content{
     z-index: 1;
     position: absolute; 
     bottom: 0; 
@@ -224,19 +224,19 @@ button.up_8{
     z-index: 1;
     position: absolute;
     bottom: 0; 
-    left: 495px;
+    left: 600px;
     width:231px;
     height:50px;
-    top:420px;
+    top:400px;
 }
 button.down_8{
     z-index: 1;
     position: absolute;
     bottom: 0; 
-    left: 725px;
+    left: 830px;
     width:231px;
     height:50px;
-    top: 420px;
+    top: 400px;
 }
 .go_8{
     z-index: 1;
@@ -276,15 +276,13 @@ button.down_8{
     left: 740px;
 } */
 .el-row{
-    left: 260px;
+    left: 170px;
     width: 1012px;
     top: 55px;
 }
-/* .opera{
-    left: 0px;
-    top: 0px;
-
-} */
+.all_input{
+    width: 900px !important;
+}
 .step01{
     background-size: 100% 100%;
     background-image: url("./img/2.png");
@@ -307,5 +305,4 @@ button.down_8{
     height:28px;
     top: 22px;
 }
-
 </style>
