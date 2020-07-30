@@ -23,13 +23,14 @@
             <div class="all_input" >
                 <div class="input_1">
                 <el-col :span="11">
-                    <el-input
+                    <v-Code></v-Code>
+                    <!-- <el-input
                     type="textarea"
                     :rows="21"
                     placeholder=""
-                    style="margin-left: 10px"
+                    style="margin-left: 10px;"
                     v-model="textarea1">
-                    </el-input>
+                    </el-input> -->
                 </el-col>    
                 </div>
                  <el-col :span="11">
@@ -74,7 +75,11 @@
 
 
 <script>
+import vcode from "../../components/code/index"
 export default {
+    components:{
+        "v-Code":vcode,
+    },
     data() {
         return {
             textarea1: '',

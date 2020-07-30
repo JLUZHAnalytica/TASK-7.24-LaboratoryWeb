@@ -3,13 +3,13 @@
     <div class="header">   <!-- 头部-->
     <!-- <div class="header_bg"><img src="img/headers.jpg" alt="" ></div> -->
     <div class="learn">
-       <router-link to="/learn" style="width: 250px;position: absolute;right: 575px;top: 88px;">
-             <img src="img\3-1-btn-study-select@2x.png" >
+       <router-link to="/learn" style="width: 250px;position: absolute;right: 650px;top: 60px;">
+             <img src="../../assets/3-tab-study-select@2x.png" >
        </router-link>
     </div>
-    <div class="answer" style="width: 250px;position: absolute;right: 710px;top: 106px;">
+    <div class="answer" style="width: 250px;position: absolute;right: 450px;top: 60px;">
       <router-link to="/answer">
-        <img src="img/3-1-btn-answer-nor@2x.png" >
+        <img src="../../assets/3-tab-answer-nor@2x.png" >
       </router-link>
     </div>
     <div class="return_main" style="text-decoration:none;width: 143px;background: #fff;border-radius: 8px;position: absolute;right: 51px;top: 38px;height: 34px;font-size: 16px;">
@@ -35,14 +35,14 @@
                     class="item"
                     :class="{selected: isSelected(question, true)}"
                     @click="doOption(true);isT">正确
-                    <img v-if="!isChoise(question)" src="img/14-icon-eaxm-nor@2x.png" alt="未选中">
-                    <img v-if="flag==='T' && isChoise(question)" src="img/14-icon-eaxm-yse-select@2x.png" alt="选中">
+                    <img v-if="!isChoise(question)" src="../../assets/14-icon-eaxm-nor@2x.png" alt="未选中">
+                    <img v-if="flag==='T' && isChoise(question)" src="../../assets/14-icon-eaxm-yse-select@2x.png" alt="选中">
                 </li>
                 <li  class="item"
                     :class="{selected: isSelected(question, false)}"
                     @click="doOption(false);isF;">错误</li>
-                    <img v-if="!isChoise(question)" src="img/14-icon-eaxm-nor@2x.png" alt="未选中">
-                    <img v-if="flag==='F' && isChoise(question)" src="img/14-icon-eaxm-yse-select@2x.png" alt="选中">
+                    <img v-if="!isChoise(question)" src="../../assets/14-icon-eaxm-nor@2x.png" alt="未选中">
+                    <img v-if="flag==='F' && isChoise(question)" src="../../assets/14-icon-eaxm-yse-select@2x.png" alt="选中">
             </ul>
             <ul class="options">
                 <li class="item" v-for="(option, index) in question.options"
@@ -92,7 +92,7 @@
   top: 0px;
   left: 0px;
 }
-.learn{
+/* .learn{
     width: 250px;
     position: absolute;
     right: 480px;
@@ -103,12 +103,12 @@
     position: absolute;
     right: 280px;
     top: 19px;
-}
+} */
 .answer_question_box{
     height: 642px;
     width: 93%;
     position: absolute;
-    top: 239px;
+    top: 145px;
     left: 69px;
     margin: auto;
     border-radius: 8px;
