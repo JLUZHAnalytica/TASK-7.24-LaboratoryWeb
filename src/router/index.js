@@ -6,9 +6,6 @@ import major7 from '@/view/major/C7'
 import major8 from '@/view/major/C8'
 import major9 from '@/view/major/C9'
 import major10 from '@/view/major/C10'
-import major11 from '@/view/major/C11'
-import major12 from '@/view/major/C12'
-import major13 from '@/view/major/C13'
 import nav from '@/view/nav/index'
 import risk_test from '@/view/risk_test/index'
 import report from '@/view/report/index'
@@ -57,18 +54,6 @@ export const constantRoutes = [{
     {
         path: '/major10',
         component: major10, //对应C10
-    },
-    {
-        path: '/major11',
-        component: major11, //对应C11
-    },
-    {
-        path: '/major12',
-        component: major12, //对应C12
-    },
-    {
-        path: '/major13',
-        component: major13, //对应C13
     },
     {
         path: '/report',
