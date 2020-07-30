@@ -103,7 +103,7 @@ export default {
 }
 span.big_content_1{
     z-index: 1;
-    /* position: absolute;  */
+    position: absolute; 
     line-height: 22px;
     left: 30px;
     color:black;
@@ -114,7 +114,7 @@ span.big_content_1{
 }
 span.big_content_2{
     z-index: 1;
-    /* position: absolute;  */
+    position: absolute; 
     line-height: 22px;
     left: 30px;
     color:black;
