@@ -2,13 +2,20 @@
   <div  style="height: 100%; width: 100%;" class="note" :style ="note">
     <div class="header">   <!-- 头部-->
     <div class="learn">
-       <router-link to="/learn">
+       <router-link to="/learn" style="width: 250px;position: absolute;right: 650px;top: 60px;">
              <img src="img/3-tab-study-nor@2x.png" >
        </router-link>
     </div>
-    <div class="answer">
+    <div class="answer" style="width: 250px;position: absolute;right: 450px;top: 60px;">
       <router-link to="/answer">
         <img src="img/3-tab-answer-select@2x.png" >
+      </router-link>
+    </div>
+    <div class="return_main" style="text-decoration:none;width: 119px;background: #fff;border-radius: 8px;position: absolute;right: 121px;top: 37px;height: 51px;font-size: 16px;">
+      <router-link to="/nav" style="text-decoration: none;">
+      <p class="return_text" style="color:#000!important;text-decoration: none;">
+        返回
+      </p>
       </router-link>
     </div>
     </div>  
@@ -18,14 +25,14 @@
         <!--题目部分-->
         <div class="exam-box"  >
             <div class="index">{{ questionIndex + 1 }}/15</div>
+            <!--<h2 class="type">{{ type }}</h2>-->
             <h3 class="title" >{{ '【'+type+'】'+question.content }}</h3>
             <div>分数：{{ score }}</div>
             <ul class="options" v-if="question.type === 'judgment'">
-                 <input type="checkbox"
-                 class="item"
+                <input type="checkbox"
+                    class="item"
                     :class="{selected: isSelected(question, true)}"
                     @click="doOption(true)">正确
-
                 <li class="item"
                     :class="{selected: isSelected(question, false)}"
                     @click="doOption(false)">错误</li>
@@ -34,16 +41,36 @@
                 <li class="item" v-for="(option, index) in question.options"
                     :key="option"
                     :class="{selected: isSelected(question, index)}"
-                    @click="doOption(index)">{{ option }}</li>
+                    @click="doOption(index)">{{ option }}
+                </li>
             </ul>
             <div class="op">
                 <button class="btn" label="上一题" @click="prevQuestion" :disabled="questionIndex === 0" />
                 <button class="btn" label="下一题" primary @click="nextQuestion" :disabled="questionIndex === questions.length - 1" />
-                <!--<ui-raised-button class="btn" label="查看答案" @click="viewAnswer" :disabled="false" />-->
-                <button class="btn" label="交卷" @click="viewAnswer" :disabled="false" />
+                <button class="btn" label="确定" @click="viewAnswer" :disabled="false" />
             </div>
+            <div class="answer_card" v-if="state === 'end'">
+            <ul class="answer-list">
+                <li class="item">
+                <div :class="{success: isSuccess(question), error: !isSuccess(question)}">
+                    <h3 v-if="question.type === 'multiple' && !isSuccess(question)">
+                        回答错误，正确答案为：
+                        <div class="right_answer">
+                             <li v-for="answer in question.answer" :key="answer">
+                             {{ numberToLetter(answer) }}
+                            </li>!
+                        </div>
+                    </h3>
+                    <h3 v-if="question.type === 'judgment' && !isSuccess(question)">
+                        答案：{{ boolToText(q.answer) }}
+                    </h3>
+                    <h3 v-if="isSuccess(question)"> 回答正确啦</h3>
+                    <button class="btn" label="下一题" primary @click="restart"/>
+                </div>
+                </li>
+            </ul>
         </div>
- 
+        </div>
 
 
      </div>
@@ -96,13 +123,25 @@
   position: absolute;
   left: 30%;
 }
+li{
+   list-style: none; 
+}
+.right_answer{
+    position: absolute;
+    left: 257px;
+    width: 67px;
+    top: 195px;
+}
+.right_answer li{
+    float: left;
+}
 
 </style>
 <script>
 export default {
     data(){
       return{
-          questionIndex: 0,
+        questionIndex: 0,
         questions: [
                     {
                         id: '1',
@@ -124,6 +163,14 @@ export default {
                         content: '1.系统性风险包括',
                         options: ['A.人事变动风险', 'B.经济周期波动风险',' C.利率风险',' D.购买力风险'],
                         answer: [1, 2,3],
+                        userAnswer: null
+                    },
+                    {
+                        id: '1',
+                        type: 'multiple',
+                        content: '1.系统性风险包括',
+                        options: ['A.人事变动风险', 'B.经济周期波动风险',' C.利率风险',' D.购买力风险'],
+                        answer: [1,2,3],
                         userAnswer: null
                     },
 
@@ -155,7 +202,7 @@ export default {
         score() {
                 let successCount = 0
                 for (let question of this.questions) {
-                    if (question.type !== 'fill' && !question.userAnswer) {
+                    if (!question.userAnswer) {
                         continue
                     }
                     if (question.type === 'multiple') {
