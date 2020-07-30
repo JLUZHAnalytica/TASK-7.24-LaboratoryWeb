@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button id="run" @click="getvalue">run</button>
+    <!-- <button id="run" @click="getvalue">run</button> -->
     <textarea ref="textarea"></textarea>
     <select v-model="mode" class="code-mode-select">
       //@change="changeMode"
@@ -38,8 +38,9 @@ const CodeMirror = window.CodeMirror || _CodeMirror;
 
 // import {codemirror} from "vue-codemirror";
 export default {
+  name:"v-Code",
   // components:{
-  //   codemirror,
+  //   code,
   // },
   data() {
     return {
