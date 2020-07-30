@@ -33,9 +33,9 @@
                     class="item"
                     :class="{selected: isSelected(question, true)}"
                     @click="doOption(true)">正确
-                <li class="item"
+                <input type="checkbox" class="item"
                     :class="{selected: isSelected(question, false)}"
-                    @click="doOption(false)">错误</li>
+                    @click="doOption(false)">错误
             </ul>
             <ul class="options">
                 <li class="item" v-for="(option, index) in question.options"
@@ -45,7 +45,7 @@
                 </li>
             </ul>
             <div class="op">
-                <button class="btn" label="上一题" @click="prevQuestion" :disabled="questionIndex === 0" />
+                <!-- <button class="btn" label="上一题" @click="prevQuestion" :disabled="questionIndex === 0" /> -->
                 <button class="btn" label="下一题" primary @click="nextQuestion" :disabled="questionIndex === questions.length - 1" />
                 <button class="btn" label="确定" @click="viewAnswer" :disabled="false" />
             </div>
@@ -62,7 +62,7 @@
                         </div>
                     </h3>
                     <h3 v-if="question.type === 'judgment' && !isSuccess(question)">
-                        答案：{{ boolToText(q.answer) }}
+                        答案：{{ boolToText(question.answer) }}
                     </h3>
                     <h3 v-if="isSuccess(question)"> 回答正确啦</h3>
                     <button class="btn" label="下一题" primary @click="restart"/>
@@ -84,7 +84,7 @@
   top: 0px;
   left: 0px;
 }
-/* .learn{
+.learn{
     width: 250px;
     position: absolute;
     right: 480px;
@@ -95,7 +95,7 @@
     position: absolute;
     right: 280px;
     top: 19px;
-} */
+}
 .answer_question_box{
     position: relative;
     height: 771px;
@@ -134,6 +134,9 @@ li{
 }
 .right_answer li{
     float: left;
+}
+.title{
+    width: 100%;
 }
 
 </style>
@@ -269,7 +272,10 @@ export default {
                 }
                
                 if (question.type === 'judgment') {
-                    return question.userAnswer === question.answer
+                     if (question.userAnswer === question.answer){
+                         return true
+                     }
+                     return false
                 }
                 return false
             },
@@ -322,12 +328,9 @@ export default {
                 this.state = 'start'
             },
             restart() {
-                // 清空回答
-                for (let question of this.questions) {
-                    question.userAnswer = null
-                }
-                this.questionIndex = 0
                 this.start()
+                this.questionIndex++
+                this.question = this.questions[this.questionIndex]
             },
             viewAnswer() {
                 this.state = 'end'
