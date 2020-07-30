@@ -2,13 +2,16 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import learn from '@/view/learn/index'
 import login from '@/view/login/index'
-import major7 from '@/view/major/C7'
-import major8 from '@/view/major/C8'
-import major9 from '@/view/major/C9'
-import major10 from '@/view/major/C10'
-import major11 from '@/view/major/C11'
-import major12 from '@/view/major/C12'
-import major13 from '@/view/major/C13'
+import home from '@/view/major/home'
+import step1 from '@/view/major/step1'
+import step2 from '@/view/major/step2'
+import step3 from '@/view/major/step3'
+import step4 from '@/view/major/step4'
+import step4_1 from '@/view/major/step4_1'
+import step5 from '@/view/major/step5'
+import step6 from '@/view/major/step6'
+import step7 from '@/view/major/step7'
+import step9 from '@/view/major/step9'
 import nav from '@/view/nav/index'
 import risk_test from '@/view/risk_test/index'
 import report from '@/view/report/index'
@@ -43,32 +46,44 @@ export const constantRoutes = [{
     //     ]
     // },
     {
-        path: '/major7',
-        component: major7, //对应C7
+        path: '/home',
+        component: home, //对应C7
     },
     {
-        path: '/major8',
-        component: major8, //对应C8
+        path: '/step1',
+        component: step1, //对应C8
     },
     {
-        path: '/major9',
-        component: major9, //对应C9
+        path: '/step2',
+        component: step2, //对应step2
     },
     {
-        path: '/major10',
-        component: major10, //对应C10
+        path: '/step3',
+        component: step3, //对应step3
     },
     {
-        path: '/major11',
-        component: major11, //对应C11
+        path: '/step4',
+        component: step4, //对应step4
     },
     {
-        path: '/major12',
-        component: major12, //对应C12
+        path: '/step4_1',
+        component: step4_1, //对应step4_1
     },
     {
-        path: '/major13',
-        component: major13, //对应C13
+        path: '/step5',
+        component: step5, //对应step5
+    },
+    {
+        path: '/step6',
+        component: step6, //对应step6
+    },
+    {
+        path: '/step7',
+        component: step7, //对应step7
+    },
+    {
+        path: '/step9',
+        component: step9, //对应step9
     },
     {
         path: '/report',

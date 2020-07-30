@@ -1,18 +1,16 @@
 <template>
-    <div class="mainBox" id="takePhoto" ref="downloadImage">
-        <div class="contentBox">
-            <div class="head">
-                <!-- <img src="@/assets/2-btn-result@2x.png"> -->
-                <div v-if="haveUpload" id="ignore">
+    <div class="mainBox" id="takePhoto" ref="downloadImage">    
+        <div class="head">
+            <div v-if="haveUpload" id="ignore">
                 <a :href="dataURL" download='实验报告.jpg'>
                     <img src="@/assets/15-btn-download@2x.png">            
                 </a>
-                </div>
-                <div v-else>
-                    <img src="@/assets/15-btn-download@2x.png">            
-                </div>
+           </div>
+            <div v-else>
+                <img src="@/assets/15-btn-download@2x.png">            
             </div>
-            <div>
+        </div>
+        <div class="contentBox">
                 <div class="bigbox">
                     <div>
                         <img src="@/assets/15-icon-1@2x.png" alt="" class="img1">
@@ -49,12 +47,30 @@
                     </div>
                     <div class="tBox">
                         <div class="tHead">
-                        <p class="ctitle">实验结果</p>
+                        <p class="ctitle">实验成绩</p>
                         </div>
                         <div class="tMsg">
-                            <p>
-                                要接收前面实验得出的数据，如图片和文字
-                            </p>
+                            <div>
+                                <!--实验数据-->
+                                <template>
+                                    <el-table
+                                        :data="tableData"
+                                        stripe
+                                        style="width: auto"
+                                        :show-header="showHeader">
+                                        <el-table-column
+                                        prop="lesson"
+                                        label=""
+                                        width="180">
+                                        </el-table-column>
+                                        <el-table-column
+                                        prop="score"
+                                        label=""
+                                        width="180">
+                                        </el-table-column>
+                                    </el-table>
+                                </template>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -80,7 +96,6 @@
                         </div>
                     </div>
                 </div>        
-            </div>
         </div>
         <button v-show="isShow" @click="onSubmit" class="bt-submit">提交</button>    
                 <!--拍照部分结束-->
@@ -99,6 +114,17 @@ export default {
             dataURL:"",
             isShow:true,
             haveUpload:false,
+            showHeader:false,
+            tableData: [{
+            lesson: '快问快答',
+            score: '15',
+            }, {
+            lesson: '考核部分',
+            score: '85',
+            }, {
+            lesson: '总成绩',
+            score: '100',
+            }]
         }
     },
     updated(){
@@ -121,6 +147,7 @@ export default {
                 let dataurl = canvas.toDataURL("image/png");
                 this.dataURL = dataurl;
             });
+            // this.isShow=true
         },
         onSubmit(){
             // alert('132')
@@ -136,6 +163,7 @@ export default {
 </script>
 <style >
     html{
+        /* position: relative; */
         background-image: url("c15-img/3-bg@2x.png") ;
         background-size: 100% auto;
     }
@@ -158,16 +186,19 @@ export default {
         left: 0.6%;
     }
     .contentBox{
-        width: 100%;
+        width: 99%;
         overflow-y: scroll;
-        border: 1px solid black;
-        height: 530px;
+        /* border: 1px solid black; */
+        height: 415px;
+        position: relative;
+        top: 72px;
+        left: 6px;
     }
     .bigbox{
         width: 1300px;
         position: relative;
         left: 135px;
-        top: 10px;
+        top: -25px;
     }
     .img1{
         width: 73px;
@@ -237,6 +268,6 @@ export default {
         color: white;
         outline: none;
         position: relative;
-        top: 25px;
+        top: 95px;
     }
 </style>

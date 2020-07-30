@@ -1,14 +1,22 @@
 <template>
   <div  style="height: 100%; width: 100%;" class="note" :style ="note">
     <div class="header">   <!-- 头部-->
+    <!-- <div class="header_bg"><img src="img/headers.jpg" alt="" ></div> -->
     <div class="learn">
-       <router-link to="/learn">
-             <img src="img/3-tab-study-nor@2x.png" >
+       <router-link to="/learn" style="width: 250px;position: absolute;right: 575px;top: 88px;">
+             <img src="img\3-1-btn-study-select@2x.png" >
        </router-link>
     </div>
-    <div class="answer">
+    <div class="answer" style="width: 250px;position: absolute;right: 710px;top: 106px;">
       <router-link to="/answer">
-        <img src="img/3-tab-answer-select@2x.png" >
+        <img src="img/3-1-btn-answer-nor@2x.png" >
+      </router-link>
+    </div>
+    <div class="return_main" style="text-decoration:none;width: 143px;background: #fff;border-radius: 8px;position: absolute;right: 51px;top: 38px;height: 34px;font-size: 16px;">
+      <router-link to="/nav" style="text-decoration: none;">
+      <p class="return_text" style="    color: #6D67EF;text-decoration: none;margin-block-start: 0.4em;">
+        返回
+      </p>
       </router-link>
     </div>
     </div>  
@@ -18,32 +26,59 @@
         <!--题目部分-->
         <div class="exam-box"  >
             <div class="index">{{ questionIndex + 1 }}/15</div>
+            <!--<h2 class="type">{{ type }}</h2>-->
             <h3 class="title" >{{ '【'+type+'】'+question.content }}</h3>
             <div>分数：{{ score }}</div>
             <ul class="options" v-if="question.type === 'judgment'">
-                 <input type="checkbox"
-                 class="item"
-                    :class="{selected: isSelected(question, true)}"
-                    @click="doOption(true)">正确
+                <li
 
-                <li class="item"
+                    class="item"
+                    :class="{selected: isSelected(question, true)}"
+                    @click="doOption(true);isT">正确
+                    <img v-if="!isChoise(question)" src="img/14-icon-eaxm-nor@2x.png" alt="未选中">
+                    <img v-if="flag==='T' && isChoise(question)" src="img/14-icon-eaxm-yse-select@2x.png" alt="选中">
+                </li>
+                <li  class="item"
                     :class="{selected: isSelected(question, false)}"
-                    @click="doOption(false)">错误</li>
+                    @click="doOption(false);isF;">错误</li>
+                    <img v-if="!isChoise(question)" src="img/14-icon-eaxm-nor@2x.png" alt="未选中">
+                    <img v-if="flag==='F' && isChoise(question)" src="img/14-icon-eaxm-yse-select@2x.png" alt="选中">
             </ul>
             <ul class="options">
                 <li class="item" v-for="(option, index) in question.options"
                     :key="option"
                     :class="{selected: isSelected(question, index)}"
-                    @click="doOption(index)">{{ option }}</li>
+                    @click="doOption(index)">{{ option }}
+                </li>
             </ul>
             <div class="op">
-                <button class="btn" label="上一题" @click="prevQuestion" :disabled="questionIndex === 0" />
-                <button class="btn" label="下一题" primary @click="nextQuestion" :disabled="questionIndex === questions.length - 1" />
-                <!--<ui-raised-button class="btn" label="查看答案" @click="viewAnswer" :disabled="false" />-->
-                <button class="btn" label="交卷" @click="viewAnswer" :disabled="false" />
+                <!-- <button class="btn" label="上一题" @click="prevQuestion" :disabled="questionIndex === 0" /> -->
+                <!-- <el-button class="btn" label="下一题" primary @click="nextQuestion" :disabled="questionIndex === questions.length - 1" >下一题 </el-button> -->
+                <el-button class="btn" label="确定" @click="viewAnswer" :disabled="false" v-if="state === ''  || state === 'start'">确定</el-button>
             </div>
+            <div class="answer_card" v-if="state === 'end'">
+            <ul class="answer-list">
+                <li class="item">
+                <div :class="{success: isSuccess(question), error: !isSuccess(question)}">
+                    <h3 v-if="question.type === 'multiple' && !isSuccess(question)">
+                        回答错误，正确答案为：
+                        <div class="right_answer">
+                             <li v-for="answer in question.answer" :key="answer">
+                             {{ numberToLetter(answer) }}
+                            </li>!
+                        </div>
+                    </h3>
+                    <h3 v-if="question.type === 'judgment' && !isSuccess(question)">
+                    回答错误，正确答案为：{{ boolToText(question.answer) }}！
+                    </h3>
+                    <h3 v-if="isSuccess(question)"> 回答正确啦</h3>
+                    <el-button class="btn" label="下一题" primary @click="restart" v-if="questionIndex < questions.length - 1"> 下一题</el-button>
+                    <h3 v-if="questionIndex === questions.length - 1">已完成最后一题：你的得分是：{{ score }}</h3>
+                </div>
+                </li>
+            </ul>
         </div>
- 
+        </div>
 
 
      </div>
@@ -70,39 +105,73 @@
     top: 19px;
 }
 .answer_question_box{
-    position: relative;
-    height: 771px;
-    width: 95%;
+    height: 642px;
+    width: 93%;
     position: absolute;
-    top: 123px;
-    left: 46px;
+    top: 239px;
+    left: 69px;
     margin: auto;
     border-radius: 8px;
     opacity: 1;
-    background: rgb(240, 238, 238);
+    background: #F0EFF6;
 }
 .bg_box{
-    position: relative;
-    height: 740px;
-    width: 98%;
+    height: 636px;
+    width: 100%;
     position: absolute;
-    top: 20px;
-    left: 16px;
+    top: 5px;
+    left: -2px;
     margin: auto;
     border-radius: 8px;
     opacity: 1;
 }
 .exam-box{
-  position: absolute;
-  left: 30%;
+    position: absolute;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
-
+li{
+    list-style: none;
+    margin: 26px;
+    font-size: 1.5em;
+    width: 320px;
+    text-align: left;
+    padding-left: 585px;
+}
+.right_answer{
+    position: absolute;
+    left: 257px;
+    width: 67px;
+    top: 195px;
+}
+.right_answer li{
+    float: left;
+}
+.title{
+    width: 100%;
+    font-size: 2em;
+}
+.li img{
+    position: absolute;
+    left: 141px;
+    top: 179px;
+}
+.index{
+    width: 49px;
+    height: 19px;
+    right: 126px;
+    position: absolute;
+    top: 66px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
 </style>
 <script>
 export default {
     data(){
       return{
-          questionIndex: 0,
+        questionIndex: 0,
         questions: [
                     {
                         id: '1',
@@ -126,12 +195,21 @@ export default {
                         answer: [1, 2,3],
                         userAnswer: null
                     },
+                    {
+                        id: '1',
+                        type: 'multiple',
+                        content: '1.系统性风险包括',
+                        options: ['A.人事变动风险', 'B.经济周期波动风险',' C.利率风险',' D.购买力风险'],
+                        answer: [1,2,3],
+                        userAnswer: null
+                    },
 
                 ],
           question: {},
-                state: '', // 'start', 'end',
+            state: '', // 'start', 'end',
+            flag:'',//T,F,1,2,3,4
           note: {
-          backgroundImage: "url(" + 'img/3-bg@2x.png' + ")",
+          backgroundImage: "url(" + 'img/C3_bg.png' + ")",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize:'100% 100%'
@@ -155,7 +233,7 @@ export default {
         score() {
                 let successCount = 0
                 for (let question of this.questions) {
-                    if (question.type !== 'fill' && !question.userAnswer) {
+                    if (!question.userAnswer) {
                         continue
                     }
                     if (question.type === 'multiple') {
@@ -222,20 +300,38 @@ export default {
                 }
                
                 if (question.type === 'judgment') {
-                    return question.userAnswer === question.answer
+                     if (question.userAnswer === question.answer){
+                         return true
+                     }
+                     return false
                 }
                 return false
             },
-            isDone(question) {
-                
-                if (question.type === 'multiple') {
-                    return question.userAnswer && question.userAnswer.length
-                }
-               
+            isChoise(question) {
                 if (question.type === 'judgment') {
-                    return question.userAnswer === true || question.userAnswer === false
+                    if(!question.userAnswer){
+                        return false
+                    }
                 }
-                return false
+                return true
+            },
+            isT() {
+                this.flag = 'T'
+            },
+            isF() {
+                this.flag = 'F'
+            },
+            isA() {
+                this.flag = '1'
+            },
+            isB() {
+                this.flag = '2'
+            },
+            isC() {
+                this.flag = '3'
+            },
+            isD() {
+                this.flag = '4'
             },
             doOption(index) {
                if (this.question.type === 'multiple') {
@@ -263,10 +359,7 @@ export default {
                 this.questionIndex--
                 this.question = this.questions[this.questionIndex]
             },
-            selectIndex(index) {
-                this.questionIndex = index
-                this.question = this.questions[this.questionIndex]
-            },
+
             nextQuestion() {
                 this.questionIndex++
                 this.question = this.questions[this.questionIndex]
@@ -275,12 +368,9 @@ export default {
                 this.state = 'start'
             },
             restart() {
-                // 清空回答
-                for (let question of this.questions) {
-                    question.userAnswer = null
-                }
-                this.questionIndex = 0
                 this.start()
+                this.questionIndex++
+                this.question = this.questions[this.questionIndex]
             },
             viewAnswer() {
                 this.state = 'end'
