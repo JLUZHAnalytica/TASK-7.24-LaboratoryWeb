@@ -13,7 +13,9 @@ import step6 from '@/view/major/step6'
 import step7 from '@/view/major/step7'
 import step9 from '@/view/major/step9'
 import nav from '@/view/nav/index'
-import risk_test from '@/view/risk_test/index'
+import risk_test1 from '@/view/risk_test/test1/index'
+import risk_test2 from '@/view/risk_test/test2/index'
+import result from '@/view/risk_test/result/index'
 import report from '@/view/report/index'
 import report2 from '@/view/report/index2'
 import answer from '@/view/answer/index'
@@ -98,8 +100,16 @@ export const constantRoutes = [{
         component: nav, //导航页面 对应C2
     },
     {
-        path: '/risk_test',
-        component: risk_test,
+        path: '/risk_test1',
+        component: risk_test1,
+    },
+    {
+        path: '/risk_test2',
+        component: risk_test2,
+    },
+    {
+        path: '/result',
+        component: result,
     }
 ]
 
