@@ -74,7 +74,7 @@
     width: 71%;
     position: absolute;
     top: 123px;
-    left: 506px;
+    left: 405px;
     margin: auto;
     border-radius: 8px;
     opacity: 0.9;
