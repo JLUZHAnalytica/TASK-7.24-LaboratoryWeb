@@ -1,9 +1,9 @@
 <template>
-    <div class="mainBox">
+    <div class="mainBox" id="takePhoto" ref="downloadImage">
         <div class="contentBox">
             <div class="head">
                 <!-- <img src="@/assets/2-btn-result@2x.png"> -->
-                <div v-if="haveUpload">
+                <div v-if="haveUpload" id="ignore">
                 <a :href="dataURL" download='实验报告.jpg'>
                     <img src="@/assets/15-btn-download@2x.png">            
                 </a>
@@ -12,7 +12,7 @@
                     <img src="@/assets/15-btn-download@2x.png">            
                 </div>
             </div>
-            <div id="takePhoto" ref="downloadImage">
+            <div>
                 <div class="bigbox">
                     <div>
                         <img src="@/assets/15-icon-1@2x.png" alt="" class="img1">
@@ -82,7 +82,7 @@
                 </div>        
             </div>
         </div>
-        <button @click="onSubmit" class="bt-submit">提交</button>    
+        <button v-show="isShow" @click="onSubmit" class="bt-submit">提交</button>    
                 <!--拍照部分结束-->
     </div>
 </template>
@@ -113,6 +113,10 @@ export default {
             html2canvas(this.$refs.downloadImage,{
                 backgroundColor: "#ffffff",  //取消图片白边问题
                 useCORS: true,  //如果是动态加载的图片 获取图片
+                ignoreElements:(element)=>{
+                if(element.id==='ignore')
+                 return true;
+                },
             }).then((canvas) => {
                 let dataurl = canvas.toDataURL("image/png");
                 this.dataURL = dataurl;
