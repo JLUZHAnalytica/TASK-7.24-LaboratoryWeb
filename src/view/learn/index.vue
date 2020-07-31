@@ -104,7 +104,7 @@
     width: 84%;
     position: absolute;
     top: 16px;
-    left: 33px;
+    left: 27px;
     grid-template-columns: repeat(auto-fill, minmax(329px, 1fr));
     grid-gap: 15px;
     height: 799px;

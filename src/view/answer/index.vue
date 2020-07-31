@@ -81,7 +81,7 @@
     
   </div>
 </template>
-<style>
+<style scoped>
 .note{
   position: absolute;
   top: 0px;
