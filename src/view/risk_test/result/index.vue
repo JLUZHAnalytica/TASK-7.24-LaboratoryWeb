@@ -102,8 +102,12 @@
                                             </div>
                                             <div class="botton">
                                             <el-button-group>
-                                                <el-button type="primary" icon="el-icon-arrow-left">上一页</el-button>
-                                                <el-button type="primary">下一页<i class="el-icon-arrow-right el-icon--right"></i></el-button>
+                                                <a href="#/risk_test1">
+                                                    <el-button type="primary" icon="el-icon-arrow-left">重新测试</el-button>
+                                                </a>
+                                                <a href="#/home">
+                                                    <el-button type="primary">确定<i class="el-icon-arrow-right el-icon--right"></i></el-button>
+                                                </a>
                                             </el-button-group> 
                                         </div>
                                         </div> 
