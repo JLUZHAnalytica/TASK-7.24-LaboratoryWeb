@@ -17,7 +17,7 @@ import risk_test1 from '@/view/risk_test/test1/index'
 import risk_test2 from '@/view/risk_test/test2/index'
 import result from '@/view/risk_test/result/index'
 import report from '@/view/report/index'
-import report2 from '@/view/report/index2'
+import report3 from '@/view/report/pngDownload'
 import answer from '@/view/answer/index'
 Vue.use(Router)
 
@@ -92,8 +92,8 @@ export const constantRoutes = [{
         component: report, //实验报告页面 对应C15
     },
     {
-        path: '/report2',
-        component: report2, //实验报告页面 对应C15
+        path: '/report3',
+        component: report3, //实验报告页面 对应C15
     },
     {
         path: '/nav',
