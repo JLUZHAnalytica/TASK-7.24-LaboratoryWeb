@@ -14,7 +14,7 @@
     </div>
     <div class="return_main" style="text-decoration:none;width: 143px;background: #fff;border-radius: 8px;position: absolute;right: 51px;top: 38px;height: 34px;font-size: 16px;">
       <router-link to="/nav" style="text-decoration: none;">
-      <p class="return_text" style="    color: #6D67EF;text-decoration: none;margin-block-start: 0.4em;">
+      <p class="return_text" style="    color: #6D67EF;text-decoration: none;margin-block-start: 0.4em;text-align: center;">
         返回
       </p>
       </router-link>
