@@ -2,7 +2,7 @@
     <div class="mainBox" id="takePhoto" ref="downloadImage">  
         <div class="head">
             <div v-if="haveUpload" id="ignore">
-                <button v-print="'#takePhoto'">
+                <button @click="downloadPng()">
                     <img src="@/assets/15-btn-download@2x.png">            
                 </button>
            </div>
@@ -94,6 +94,7 @@
                         <div v-show="!isShow">
                             <p>{{textmsg}}</p>
                         </div>
+                    <child :ParentStr="textmsg"></child>
                     </div>
                 </div>        
         </div>
@@ -102,11 +103,10 @@
     </div>
 </template>
 <script>
-import pt from 'vue-print-nb'
-import Vue from 'vue'
+//import child from "./pngDownload"
 export default {
     components: {
-        //TP,
+        //child,
     },
     data(){
         return{
@@ -128,19 +128,19 @@ export default {
         }
     },
     methods:{
-        upload(){
-            this.isShow=!this.isShow;
-            this.haveUpload=true;
-            Vue.use(pt);
-        },
         onSubmit(){
             // alert('132')
-            this.upload()
+            this.isShow=!this.isShow;
+            this.haveUpload=true;
             this.$message({
                 message:'提交成功',
                 type:'success'
             })
         },
+        downloadPng(){
+            let routerJump = this.$router.resolve({ path: 'report3', query: {  } });
+			window.open(routerJump.href, '_blank');         
+        }
     }    
 }
 
