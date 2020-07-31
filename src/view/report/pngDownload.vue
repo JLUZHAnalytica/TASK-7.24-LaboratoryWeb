@@ -63,7 +63,7 @@
                             <p>{{ParentStr}}</p>
                         </div>
                     </div>
-                </div>        
+                </div> 
         </div>
 </template>
 <script>
@@ -81,10 +81,14 @@ export default {
             lesson: '总成绩',
             score: '100',
             }],
+            
         }
     },
     props: {
-        "ParentStr": String
+        ParentStr:{
+            type:String,
+            default:"this is default"
+        }
   }    
 }
 </script>

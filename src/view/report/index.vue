@@ -1,10 +1,10 @@
 <template>
-    <div class="mainBox" id="takePhoto" ref="downloadImage">  
+    <div class="mainBox" id="takePhoto" ref="downloadImage">    
         <div class="head">
             <div v-if="haveUpload" id="ignore">
-                <button @click="downloadPng()">
+                <a :href="dataURL" download='实验报告.jpg'>
                     <img src="@/assets/15-btn-download@2x.png">            
-                </button>
+                </a>
            </div>
             <div v-else>
                 <img src="@/assets/15-btn-download@2x.png">            
@@ -94,7 +94,6 @@
                         <div v-show="!isShow">
                             <p>{{textmsg}}</p>
                         </div>
-                    <child :ParentStr="textmsg"></child>
                     </div>
                 </div>        
         </div>
@@ -103,10 +102,10 @@
     </div>
 </template>
 <script>
-//import child from "./pngDownload"
+import html2canvas from 'html2canvas';
 export default {
     components: {
-        //child,
+        //html2canvas
     },
     data(){
         return{
@@ -127,25 +126,40 @@ export default {
             }]
         }
     },
+    updated(){
+        this.takePhoto();
+    },
     methods:{
-        onSubmit(){
-            // alert('132')
+        upload(){
             this.isShow=!this.isShow;
             this.haveUpload=true;
+        },
+        takePhoto() {
+            html2canvas(this.$refs.downloadImage,{
+                backgroundColor: "#ffffff",  //取消图片白边问题
+                useCORS: true,  //如果是动态加载的图片 获取图片
+                ignoreElements:(element)=>{
+                if(element.id==='ignore')
+                 return true;
+                },
+            }).then((canvas) => {
+                let dataurl = canvas.toDataURL("image/png");
+                this.dataURL = dataurl;
+            });
+            // this.isShow=true
+        },
+        onSubmit(){
+            // alert('132')
+            this.upload()
             this.$message({
                 message:'提交成功',
                 type:'success'
             })
         },
-        downloadPng(){
-            let routerJump = this.$router.resolve({ path: 'report3', query: {  } });
-			window.open(routerJump.href, '_blank');         
-        }
     }    
 }
-
 </script>
-<style  scoped>
+<style >
     html{
         /* position: relative; */
         background-image: url("c15-img/3-bg@2x.png") ;
