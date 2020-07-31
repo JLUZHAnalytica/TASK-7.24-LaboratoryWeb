@@ -50,7 +50,7 @@ export default {
     }
 }
 </script>
-<style>
+<style scoped>
 html{
     background: url("c15-img/3-bg@2x.png") no-repeat top fixed;
     background-size: 100% 100%;

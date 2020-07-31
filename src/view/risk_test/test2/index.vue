@@ -116,7 +116,7 @@
     </div>
 </template>
 
-<style>
+<style scoped>
     .el-header{
         background-color: #ffffff;
         color: #333;
