@@ -145,6 +145,17 @@ export default {
 .con{
     height: 355px;
 }
+span.big_cont{
+    z-index: 1;
+    position: absolute; 
+    line-height: 22px;
+    left: 45px;
+    color:white;
+    width: 210px;
+    height:70px;
+    top: 110px;
+    font-size: 15px;
+}
 span.big_content_1{
     z-index: 1;
     position: absolute; 
@@ -229,7 +240,7 @@ button.up_6{
     z-index: 1;
     position: absolute;
     bottom: 0; 
-    left: 600px;
+    left: 590px;
     width:231px;
     height:50px;
     top:420px;

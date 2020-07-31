@@ -152,7 +152,7 @@ span.big_cont{
     line-height: 22px;
     left: 45px;
     color:white;
-    width: 710px;
+    width: 200px;
     height:70px;
     top: 110px;
     font-size: 15px;
@@ -241,10 +241,10 @@ button.up_8{
     z-index: 1;
     position: absolute;
     bottom: 0; 
-    left: 600px;
+    left: 590px;
     width:231px;
     height:50px;
-    top:400px;
+    top:420px;
 }
 button.down_8{
     z-index: 1;
@@ -253,7 +253,7 @@ button.down_8{
     left: 830px;
     width:231px;
     height:50px;
-    top: 400px;
+    top: 420px;
 }
 .go_8{
     z-index: 1;

@@ -241,7 +241,7 @@ button.up_5{
     z-index: 1;
     position: absolute;
     bottom: 0; 
-    left: 600px;
+    left: 590px;
     width:231px;
     height:50px;
     top:420px;

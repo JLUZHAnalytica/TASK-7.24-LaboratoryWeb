@@ -158,7 +158,7 @@ span.big_cont{
     line-height: 22px;
     left: 45px;
     color:white;
-    width: 710px;
+    width: 200px;
     height:70px;
     top: 110px;
     font-size: 15px;
