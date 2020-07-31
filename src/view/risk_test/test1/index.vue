@@ -104,6 +104,9 @@
                                         <el-button-group>
                                             <el-button @click="lastpage" type="primary" icon="el-icon-arrow-left">上一页</el-button>
                                             <el-button @click="nextpage" type="primary">下一页<i class="el-icon-arrow-right el-icon--right"></i></el-button>
+                                            <p  @click='getQA(score)'>
+                                                {{score}}
+                                            </p>
                                         </el-button-group> 
                                     </div>
                                 </div>
@@ -257,10 +260,8 @@
   export default {
     data () {
       return {
+        score:0,
         radio1: '1',
-        radio2: '1',
-        radio3: '1',
-        radio4: '1',
         url: 'https://i.loli.net/2020/07/28/JTvZjiX2bwEL7uU.png',
         url1:'https://i.loli.net/2020/07/28/ymPxdFMNkiRtzJY.png',
         } 
@@ -281,7 +282,10 @@
  
           //指定跳转地址
           this.$router.replace('/risk_test2')
-        }
+        },
+        getQA(score){
+                console.log(score);
+            }
     }
   }
 </script>
