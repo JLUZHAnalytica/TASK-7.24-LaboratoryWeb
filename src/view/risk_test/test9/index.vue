@@ -97,7 +97,7 @@
                                             <div>
                                                 <el-radio v-model="radio1" label="3" border>C.了解证券市场的投资知识，并且有过实际操作经验，懂得一些投资技巧</el-radio>
                                                 <el-radio v-model="radio1" label="4" border>D.参与过多年的证券交易，投资知识丰富，具有一定的专业水平</el-radio>
-                                            </div>>
+                                            </div>
                                         </div>
                                     </div>  
                                     <div class="botton">
