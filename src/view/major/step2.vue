@@ -11,10 +11,10 @@
         <span class="con_in"><p>In:</p></span>
         <span class="con_out"><p>Out:</p></span>
         <el-row class="opera">
-            <el-button class="up_8" type="primary">上一步</el-button>
-            <el-button class="down_8" type="primary">下一步</el-button>
+            <el-button class="up_2" type="primary">上一步</el-button>
+            <el-button class="down_2" type="primary">下一步</el-button>
         </el-row>
-        <el-button class="go_8" type="primary">运行</el-button>
+        <el-button class="go_2" type="primary">运行</el-button>
         <a href="#/nav">
         <el-button plain class="return">返回</el-button>
         </a>
@@ -141,6 +141,17 @@ export default {
 .con{
     height: 355px;
 }
+span.big_cont{
+    z-index: 1;
+    position: absolute; 
+    line-height: 22px;
+    left: 45px;
+    color:white;
+    width: 710px;
+    height:70px;
+    top: 110px;
+    font-size: 15px;
+}
 span.big_content_1{
     z-index: 1;
     position: absolute; 
@@ -221,32 +232,32 @@ img.img_7{
     height:50px;
     top: 27px;
 } */
-button.up_8{
+button.up_2{
     z-index: 1;
     position: absolute;
     bottom: 0; 
     left: 600px;
     width:231px;
     height:50px;
-    top:400px;
+    top:420px;
 }
-button.down_8{
+button.down_2{
     z-index: 1;
     position: absolute;
     bottom: 0; 
     left: 830px;
     width:231px;
     height:50px;
-    top: 400px;
+    top: 420px;
 }
-.go_8{
+button.go_2{
     z-index: 1;
     position: absolute;
     bottom: 0; 
     left: 1110px;
     width:120px;
     height:30px;
-    top: 76px;
+    top: 78px;
 }
 .return{
     z-index: 1;

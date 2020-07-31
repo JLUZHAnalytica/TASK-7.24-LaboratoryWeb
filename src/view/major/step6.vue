@@ -11,8 +11,8 @@
         <span class="con_in"><p>In:</p></span>
         <span class="con_out"><p>Out:</p></span>
         <el-row class="opera">
-            <el-button class="up_8" type="primary">上一步</el-button>
-            <el-button class="down_8" type="primary">下一步</el-button>
+            <el-button class="up_6" type="primary">上一步</el-button>
+            <el-button class="down_6" type="primary">下一步</el-button>
         </el-row>
         <el-button class="go_8" type="primary">运行</el-button>
         <a href="#/nav">
@@ -221,25 +221,25 @@ img.img_7{
     height:50px;
     top: 27px;
 } */
-button.up_8{
+button.up_6{
     z-index: 1;
     position: absolute;
     bottom: 0; 
     left: 600px;
     width:231px;
     height:50px;
-    top:400px;
+    top:420px;
 }
-button.down_8{
+button.down_6{
     z-index: 1;
     position: absolute;
     bottom: 0; 
     left: 830px;
     width:231px;
     height:50px;
-    top: 400px;
+    top: 420px;
 }
-.go_8{
+button.go_8{
     z-index: 1;
     position: absolute;
     bottom: 0; 

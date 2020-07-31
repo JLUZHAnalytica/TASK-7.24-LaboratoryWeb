@@ -142,6 +142,17 @@ export default {
 .con{
     height: 355px;
 }
+span.big_cont{
+    z-index: 1;
+    position: absolute; 
+    line-height: 22px;
+    left: 45px;
+    color:white;
+    width: 710px;
+    height:70px;
+    top: 110px;
+    font-size: 15px;
+}
 span.big_content_1{
     z-index: 1;
     position: absolute; 
