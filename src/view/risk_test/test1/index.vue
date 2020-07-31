@@ -89,8 +89,8 @@
             </div>
             <div class="botton">
               <el-button-group>
-                <el-button  type="primary" icon="el-icon-arrow-left" @cilck="sub">上一页</el-button><!-- @click="lastpage" -->
-                <el-button  type="primary" @cilck="add"><!-- @click="nextpage"-->
+                <el-button  type="primary" icon="el-icon-arrow-left" @click="sub">上一页</el-button><!-- @click="lastpage" -->
+                <el-button  type="primary" @click="add"><!-- @click="nextpage"-->
                   下一页
                   <i class="el-icon-arrow-right el-icon--right"></i>
                 </el-button>
@@ -246,7 +246,7 @@ ol.steps li.step-end .step-line {
         radio1: '1',
         url: 'https://i.loli.net/2020/07/28/JTvZjiX2bwEL7uU.png',
         url1:'https://i.loli.net/2020/07/28/ymPxdFMNkiRtzJY.png',
-        index:1,
+        index:0,
         question:[
             {que:"请问您的年龄处于（    ）。",opt:["30岁以下","31-40岁","41-50岁","51-60岁","60岁以上"]},
             {que:"您家庭预计进行证券投资的资金占家庭现有总资产（不含自住、自用房产及汽车等固定资产）的比例是（    ）。",opt:["70%以上","50%-70%","30%-50%","10%-30%","10%以下"]},
@@ -266,11 +266,13 @@ ol.steps li.step-end .step-line {
         if(this.index<10){
           this.index+=1
         }
-        console.log(this.index)
       },
       sub() {
         if(this.index>0){
           this.index-=1
+        }
+        else{
+          this.lastpage()
         }
       },
         lastpage(){
