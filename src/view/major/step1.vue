@@ -12,8 +12,12 @@
         <span class="con_in"><p>In:</p></span>
         <span class="con_out"><p>Out:</p></span>
         <el-row class="opera">
+            <a href="#/home">
             <el-button class="up_1" type="primary">上一步</el-button>
+            </a>
+            <a href="#/step2">
             <el-button class="down_1" type="primary">下一步</el-button>
+            </a>
         </el-row>
         <el-button class="go_8" type="primary">运行</el-button>
         <a href="#/nav">

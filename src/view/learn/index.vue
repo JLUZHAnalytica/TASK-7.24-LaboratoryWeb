@@ -1,19 +1,19 @@
 <template>
   <div  style="height: 100%; width: 100%;" class="note" :style ="note">
     <div class="header">   <!-- 头部-->
-    <div class="learn" style="width: 250px;position: absolute;right: 650px;top: 60px;">
-       <router-link to="/learn">
-             <img src="img/3-tab-study-select@2x.png" >
+     <div class="learn">
+       <router-link to="/learn" style="width: 250px;position: absolute;right: 575px;top: 88px;">
+             <img src="img/btn-study-select.png" >
        </router-link>
     </div>
-    <div class="answer" style="width: 250px;position: absolute;right: 450px;top: 60px;">
+    <div class="answer" style="width: 250px;position: absolute;right: 710px;top: 106px;">
       <router-link to="/answer">
-        <img src="img/3-tab-answer-nor@2x.png" >
+        <img src="img/btn-answer-nor.png" >
       </router-link>
     </div>
-    <div class="return_main" style="text-decoration:none;width: 119px;background: #fff;border-radius: 8px;position: absolute;right: 121px;top: 37px;height: 51px;font-size: 16px;">
+    <div class="return_main" style="text-decoration:none;width: 143px;background: #fff;border-radius: 8px;position: absolute;right: 51px;top: 38px;height: 34px;font-size: 16px;">
       <router-link to="/nav" style="text-decoration: none;">
-      <p class="return_text" style="color:#000!important;text-decoration: none;">
+      <p class="return_text" style="    color: #6D67EF;text-decoration: none;margin-block-start: 0.4em;text-align: center;">
         返回
       </p>
       </router-link>
@@ -39,24 +39,24 @@
   </div>
   </div>
 </template>
-<style scoped>
+<style  scoped>
 .note{
   position: absolute;
   top: 0px;
   left: 0px;
 }
-/* .learn{
+.learn{
     width: 250px;
     position: absolute;
-    right: 650px;
-    top: 60px;
+    right: 480px;
+    top: 19px;
 }
 .answer{
     width: 250px;
     position: absolute;
-    right: 450px;
-    top: 60px;
-} */
+    right: 280px;
+    top: 19px;
+}
 .return_main{
     text-decoration:none;
     width: 119px;
@@ -65,36 +65,34 @@
     position: absolute;
     right: 121px;
     top: 37px;
-    height: 51px;
+    height: 30px;
     font-size: 16px;
 }
 .big_box{
-    position: relative;
-    height: 771px;
-    width: 71%;
+    height: 683px;
+    width: 73%;
     position: absolute;
-    top: 140px;
-    left: 405px;
+    top: 230px;
+    left: 482px;
     margin: auto;
     border-radius: 8px;
-    opacity: 0.9;
+    opacity: 1;
 }
 .left_box{
-    position: relative;
-    height: 803px;
+    height: 696px;
     width: 24%;
     position: absolute;
-    top: 108px;
-    left: 23px;
+    top: 218px;
+    left: 19px;
     overflow: auto;
     overflow-x: hidden;
+    background-color: #3E70CA;
 }
 .vueGallery .activePhoto {
-    position: absolute;
-    width: 96%;
-    left:28px;
-    top: 18px;
-    height: 725px;
+    width: 98%;
+    left: 15px;
+    top: 14px;
+    height: 647px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -103,16 +101,17 @@
 }
 .vueGallery .thumbnails {
     display: grid;
-    width: 87%;
+    width: 84%;
     position: absolute;
-    top: 21px;
-    left: 30px;
+    top: 16px;
+    left: 27px;
     grid-template-columns: repeat(auto-fill, minmax(329px, 1fr));
     grid-gap: 15px;
-    height: 800px;
+    height: 799px;
 }
 .vueGallery .thumbnails img{
   width: 100%;
+  height: 197px;
 }
 /* 定义滚动条样式 */
 ::-webkit-scrollbar {
@@ -134,15 +133,15 @@
   background-color: rgba(240, 240, 240, .5);
 }
 .vueGallery .thumbnails div {
-  width: 100%;
-  border: 2px solid #fff;
-  cursor: pointer;
-  
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 1;
-  border-radius: 8px;
+    width: 105%;
+    border: 2px solid #fff;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    height: 203px;
+    border-radius: 8px;
 }
 .vueGallery .thumbnails div:hover {
   opacity: 0.6;
@@ -166,7 +165,7 @@ export default {
     data(){
       return{
           note: {
-          backgroundImage: "url(" + 'img/3-bg@2x.png' + ")",
+          backgroundImage: "url(" + 'img/C3-1.png' + ")",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize:'100% 100%'

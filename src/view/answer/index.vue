@@ -14,7 +14,7 @@
     </div>
     <div class="return_main" style="text-decoration:none;width: 143px;background: #fff;border-radius: 8px;position: absolute;right: 51px;top: 38px;height: 34px;font-size: 16px;">
       <router-link to="/nav" style="text-decoration: none;">
-      <p class="return_text" style="    color: #6D67EF;text-decoration: none;margin-block-start: 0.4em;">
+      <p class="return_text" style="    color: #6D67EF;text-decoration: none;margin-block-start: 0.4em;text-align: center;">
         返回
       </p>
       </router-link>
@@ -68,7 +68,7 @@
                          <p class="text_wt">回答正确啦 !</p>
                     </div>
                     <el-button type="primary" class="btn" label="下一题" primary @click="restart" v-if="questionIndex < questions.length - 1"> 下一题</el-button>
-                    <h3 v-if="questionIndex === questions.length - 1">已完成最后一题：你的得分是：{{ score }}</h3>
+                    <div class="result" v-if="questionIndex === questions.length - 1">已完成最后一题 ! 你的得分是：{{ score }} 分</div>
                 </div>
                 </li>
             </ul>
@@ -81,7 +81,7 @@
     
   </div>
 </template>
-<style>
+<style scoped>
 .note{
   position: absolute;
   top: 0px;
@@ -207,7 +207,12 @@ ul{
     right: 107px;
     top: 539px;
 }
-
+.result{
+    width: 417px;
+    position: absolute;
+    left: 614px;
+    top: 378px;
+}
 </style>
 <script>
 
