@@ -77,7 +77,7 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
 
 .big_back{
     position: absolute;

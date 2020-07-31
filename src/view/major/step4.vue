@@ -94,7 +94,7 @@ export default {
 
 
 
-<style>
+<style scoped>
 .big_back{
     position: absolute;
     top:0;

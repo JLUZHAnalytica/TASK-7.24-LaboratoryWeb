@@ -145,7 +145,7 @@ export default {
 }
 
 </script>
-<style >
+<style  scoped>
     html{
         /* position: relative; */
         background-image: url("c15-img/3-bg@2x.png") ;
