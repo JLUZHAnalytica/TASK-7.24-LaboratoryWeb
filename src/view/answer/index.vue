@@ -34,10 +34,10 @@
                     :key="option"
                     :class="{selected: isSelected(question, index)}"
                     @click="doOption(index)" >{{ option }}
-                    <img class="Aimg"  v-if="index === 0"    src="img/icon_eaxm_nor.png.png" alt="未选中">
-                    <img class="Bimg"  v-if="index === 1" src="img/icon_eaxm_nor.png.png" alt="未选中">
-                    <img class="Cimg"  v-if="index === 2" src="img/icon_eaxm_nor.png.png" alt="未选中">
-                    <img class="Dimg"  v-if="index === 3" src="img/icon_eaxm_nor.pngr.png" alt="未选中">
+                    <img class="Aimg"  v-if="index === 0"    src="img/icon_eaxm_nor.png" alt="未选中">
+                    <img class="Bimg"  v-if="index === 1" src="img/icon_eaxm_nor.png" alt="未选中">
+                    <img class="Cimg"  v-if="index === 2" src="img/icon_eaxm_nor.png" alt="未选中">
+                    <img class="Dimg"  v-if="index === 3" src="img/icon_eaxm_nor.png" alt="未选中">
                     <img class="Aimg"  v-if="index  === 0 && isSelected(question, index)"    src="img/icon_eaxm_select.png" alt="选中">
                     <img class="Bimg"  v-if="index  === 1 && isSelected(question, index)"    src="img/icon_eaxm_select.png" alt="选中">
                     <img class="Cimg"  v-if="index === 2 && isSelected(question, index)"    src="img/icon_eaxm_select.png" alt="选中">
