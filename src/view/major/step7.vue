@@ -40,7 +40,9 @@
                     <el-button class="sure" type="primary" @click="dialogVisible = false">确定买入</el-button>
                 </span>
             </el-dialog>
+            <a href="#/step9">
             <el-button class="down_10" type="primary">调整</el-button>
+            </a>
         </el-row>
         <el-row>
             <img class="data_1" src="@/view/major/img/10-1.png">

@@ -77,23 +77,23 @@ export const constantRoutes = [{
     },
     {
         path: '/step4_1',
-        component: step4_1, //对应step4_1
+        component: step4_1, //对应step4_1 
     },
     {
         path: '/step5',
-        component: step5, //对应step5
+        component: step5, //对应step5 
     },
     {
         path: '/step6',
-        component: step6, //对应step6
+        component: step6, //对应step6 
     },
     {
         path: '/step7',
-        component: step7, //对应step7
+        component: step7, //对应step7 C10
     },
     {
         path: '/step9',
-        component: step9, //对应step9
+        component: step9, //对应step9 C12
     },
     {
         path: '/report',

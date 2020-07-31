@@ -24,7 +24,7 @@
             <el-button type="text" icon="step02" circle @click="centerChangeVisible = true"></el-button>
         </div>
         <img class="form" src="@/view/major/img/7-1.png">
-        <a href="#/major8">
+        <a href="#/step1">
             <el-button class="go" type="primary">开始分析</el-button>
         </a>
     </div>
