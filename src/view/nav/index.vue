@@ -2,20 +2,20 @@
   <div id="background">
     <el-image  class="background" :src="bg" fit="fill"></el-image>
     <div class="btn-group">
-      <el-row :gutter="10">
+      <el-row :gutter="10" style="left: 60px;">
         <el-col :span="8">
           <router-link to="/learn">
-            <el-image :src="images[2]" style="width: 80%; height: 80%;"></el-image>
+            <el-image :src="images[2]" ></el-image>
             <el-image :src="images[12]" style="position: absolute;top: 14%;left: 13%;"></el-image>
           </router-link>
         </el-col>
         <el-col :span="8">
-          <el-image style="width: 80%; height: 80%;" :src="images[1]"  @click="centerDialogVisible = true"></el-image><!--cursor:pointer -->
+          <el-image  :src="images[1]"  @click="centerDialogVisible = true"></el-image><!--cursor:pointer -->
           <el-image :src="images[10]" style="position: absolute;top: 14%;left: 46%;"></el-image>
           <el-dialog :visible.sync="centerDialogVisible" width="55%" custom-class="selectMode">
             <el-image :src="images[4]" fit="fill"></el-image>
             <div class="el-dialog-btn"  style="margin-left: 10px;margin-right: -10px;">
-              <el-row :gutter="20">
+              <el-row :gutter="20" >
                 <el-col :span="10">
                   <router-link to="/main/teach">
                     <el-image :src="images[5]"></el-image>
@@ -39,7 +39,7 @@
         </el-col>
         <el-col :span="8">
           <router-link to="/report">
-            <el-image :src="images[3]" style="width: 80%; height: 80%;"></el-image>
+            <el-image :src="images[3]" ></el-image>
             <el-image :src="images[11]" style="position: absolute;top: 14%;left: 80%;"></el-image>
           </router-link>
         </el-col>
@@ -89,11 +89,8 @@ export default {
 }
 .el-dialog-btn {
   position: fixed;
-  top: 29%;
-  left: 29%;
-}
-.el-row{
-  left: -91px;
+  top: 22%;
+  left: 11%;
 }
 </style>
 
