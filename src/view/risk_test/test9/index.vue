@@ -87,17 +87,17 @@
                                     <div class="main-main" >
                                         <div class="question">
                                             <el-avatar src="https://i.loli.net/2020/07/30/3ciFzRunxrTb1LJ.png"></el-avatar>
-                                            <b>1.请问您的年龄处于（    ）。</b>
+                                            <b>9.您是否了解证券市场的相关知识（    ）。</b>
                                         </div>
                                         <div class="answer" >
                                             <div>
-                                                <el-radio v-model="radio1" label="1"  border>30岁以下</el-radio>
-                                                <el-radio v-model="radio1" label="2"  border>31-40岁</el-radio>
+                                                <el-radio v-model="radio1" label="1"  border>A.从来没有参与过证券交易，对投资知识完全不了解</el-radio>
+                                                <el-radio v-model="radio1" label="2"  border>B.学习过证券投资知识，但没有实际操作经验，不懂投资技巧</el-radio>
                                             </div>
                                             <div>
-                                                <el-radio v-model="radio1" label="3" border>41-50岁</el-radio>
-                                                <el-radio v-model="radio1" label="4" border>51-60岁</el-radio>
-                                            </div>
+                                                <el-radio v-model="radio1" label="3" border>C.了解证券市场的投资知识，并且有过实际操作经验，懂得一些投资技巧</el-radio>
+                                                <el-radio v-model="radio1" label="4" border>D.参与过多年的证券交易，投资知识丰富，具有一定的专业水平</el-radio>
+                                            </div>>
                                         </div>
                                     </div>  
                                     <div class="botton">
@@ -261,6 +261,7 @@
         radio2: '1',
         radio3: '1',
         radio4: '1',
+        radio5: '1',
         url: 'https://i.loli.net/2020/07/28/JTvZjiX2bwEL7uU.png',
         url1:'https://i.loli.net/2020/07/28/ymPxdFMNkiRtzJY.png',
         } 
@@ -269,10 +270,10 @@
         lastpage(){
  
           //点击跳转至上次浏览页面
-          this.$router.go(-1)
+          //this.$router.go(-1)
  
           //指定跳转地址
-          //this.$router.replace('/risk_test2')
+          this.$router.replace('/risk_test8')
         },
         nextpage(){
  
@@ -280,7 +281,7 @@
          // this.$router.go(-1)
  
           //指定跳转地址
-          this.$router.replace('/risk_test2')
+          this.$router.replace('/risk_test10')
         }
     }
   }

@@ -87,16 +87,19 @@
                                     <div class="main-main" >
                                         <div class="question">
                                             <el-avatar src="https://i.loli.net/2020/07/30/3ciFzRunxrTb1LJ.png"></el-avatar>
-                                            <b>1.请问您的年龄处于（    ）。</b>
+                                            <b>4.进行一项重大投资后，您通常会觉得（    ）。</b>
                                         </div>
                                         <div class="answer" >
                                             <div>
-                                                <el-radio v-model="radio1" label="1"  border>30岁以下</el-radio>
-                                                <el-radio v-model="radio1" label="2"  border>31-40岁</el-radio>
+                                                <el-radio v-model="radio1" label="1"  border>A.很高兴，对自己的决定很有信心</el-radio>
+                                                <el-radio v-model="radio1" label="2"  border>B.轻松，基本持乐观态度</el-radio>
                                             </div>
                                             <div>
-                                                <el-radio v-model="radio1" label="3" border>41-50岁</el-radio>
-                                                <el-radio v-model="radio1" label="4" border>51-60岁</el-radio>
+                                                <el-radio v-model="radio1" label="3" border>C.基本没什么影响</el-radio>
+                                                <el-radio v-model="radio1" label="4" border>D.比较担心投资结果</el-radio>
+                                            </div>
+                                            <div>
+                                                <el-radio v-model="radio1" label="5" border>E.非常担心投资结果</el-radio>
                                             </div>
                                         </div>
                                     </div>  
@@ -261,6 +264,7 @@
         radio2: '1',
         radio3: '1',
         radio4: '1',
+        radio5: '1',
         url: 'https://i.loli.net/2020/07/28/JTvZjiX2bwEL7uU.png',
         url1:'https://i.loli.net/2020/07/28/ymPxdFMNkiRtzJY.png',
         } 
@@ -269,10 +273,10 @@
         lastpage(){
  
           //点击跳转至上次浏览页面
-          this.$router.go(-1)
+          //this.$router.go(-1)
  
           //指定跳转地址
-          //this.$router.replace('/risk_test2')
+          this.$router.replace('/risk_test3')
         },
         nextpage(){
  
@@ -280,7 +284,7 @@
          // this.$router.go(-1)
  
           //指定跳转地址
-          this.$router.replace('/risk_test2')
+          this.$router.replace('/risk_test5')
         }
     }
   }

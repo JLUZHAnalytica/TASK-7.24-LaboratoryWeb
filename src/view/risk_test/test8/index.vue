@@ -87,16 +87,15 @@
                                     <div class="main-main" >
                                         <div class="question">
                                             <el-avatar src="https://i.loli.net/2020/07/30/3ciFzRunxrTb1LJ.png"></el-avatar>
-                                            <b>1.请问您的年龄处于（    ）。</b>
+                                            <b>8.您用于证券投资的资金不会用作其它用途的时间段为（    ）。</b>
                                         </div>
                                         <div class="answer" >
                                             <div>
-                                                <el-radio v-model="radio1" label="1"  border>30岁以下</el-radio>
-                                                <el-radio v-model="radio1" label="2"  border>31-40岁</el-radio>
+                                                <el-radio v-model="radio1" label="1"  border>A.短期：0-1年</el-radio>
+                                                <el-radio v-model="radio1" label="2"  border>B.中期：1-5年</el-radio>
                                             </div>
                                             <div>
-                                                <el-radio v-model="radio1" label="3" border>41-50岁</el-radio>
-                                                <el-radio v-model="radio1" label="4" border>51-60岁</el-radio>
+                                                <el-radio v-model="radio1" label="3" border>C.长期：5年以上</el-radio>
                                             </div>
                                         </div>
                                     </div>  
@@ -260,7 +259,6 @@
         radio1: '1',
         radio2: '1',
         radio3: '1',
-        radio4: '1',
         url: 'https://i.loli.net/2020/07/28/JTvZjiX2bwEL7uU.png',
         url1:'https://i.loli.net/2020/07/28/ymPxdFMNkiRtzJY.png',
         } 
@@ -269,10 +267,10 @@
         lastpage(){
  
           //点击跳转至上次浏览页面
-          this.$router.go(-1)
+          //this.$router.go(-1)
  
           //指定跳转地址
-          //this.$router.replace('/risk_test2')
+          this.$router.replace('/risk_test7')
         },
         nextpage(){
  
@@ -280,7 +278,7 @@
          // this.$router.go(-1)
  
           //指定跳转地址
-          this.$router.replace('/risk_test2')
+          this.$router.replace('/risk_test9')
         }
     }
   }

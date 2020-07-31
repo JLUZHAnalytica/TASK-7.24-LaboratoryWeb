@@ -85,18 +85,21 @@
                                 <div class="main" id="right" style="height:800px;width:1200px;float:left;">    
                                     <i><b font-size:40px>风险承受能力评估问卷</b></i>
                                     <div class="main-main" >
-                                        <div class="question">
+                                        <div class="question" >
                                             <el-avatar src="https://i.loli.net/2020/07/30/3ciFzRunxrTb1LJ.png"></el-avatar>
-                                            <b>1.请问您的年龄处于（    ）。</b>
+                                            <b>5.假设有两种不同的投资：投资A预期获得5%的收益，有可能承担非常小的损失；投资B预期获得20%的收益，但有可能面临25%甚至更高的亏损。您将您的投资资产分配为（    ）。</b>
                                         </div>
                                         <div class="answer" >
                                             <div>
-                                                <el-radio v-model="radio1" label="1"  border>30岁以下</el-radio>
-                                                <el-radio v-model="radio1" label="2"  border>31-40岁</el-radio>
+                                                <el-radio v-model="radio1" label="1"  border>A.全部投资于A</el-radio>
+                                                <el-radio v-model="radio1" label="2"  border>B.大部分投资于A</el-radio>
                                             </div>
                                             <div>
-                                                <el-radio v-model="radio1" label="3" border>41-50岁</el-radio>
-                                                <el-radio v-model="radio1" label="4" border>51-60岁</el-radio>
+                                                <el-radio v-model="radio1" label="3" border>C.两种投资各一半</el-radio>
+                                                <el-radio v-model="radio1" label="4" border>D.大部分投资于B</el-radio>
+                                            </div>
+                                            <div>
+                                                <el-radio v-model="radio1" label="5" border>E.全部投资于B</el-radio>
                                             </div>
                                         </div>
                                     </div>  
@@ -158,7 +161,7 @@
     .answer{
         background-color: #ffffff;
         font-size: 40px;
-        top: 100px;
+        top: 30px;
         position: relative;
     }
     .botton{
@@ -261,6 +264,7 @@
         radio2: '1',
         radio3: '1',
         radio4: '1',
+        radio5: '1',
         url: 'https://i.loli.net/2020/07/28/JTvZjiX2bwEL7uU.png',
         url1:'https://i.loli.net/2020/07/28/ymPxdFMNkiRtzJY.png',
         } 
@@ -269,10 +273,10 @@
         lastpage(){
  
           //点击跳转至上次浏览页面
-          this.$router.go(-1)
+          //this.$router.go(-1)
  
           //指定跳转地址
-          //this.$router.replace('/risk_test2')
+          this.$router.replace('/risk_test4')
         },
         nextpage(){
  
@@ -280,7 +284,7 @@
          // this.$router.go(-1)
  
           //指定跳转地址
-          this.$router.replace('/risk_test2')
+          this.$router.replace('/risk_test6')
         }
     }
   }

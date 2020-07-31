@@ -87,16 +87,16 @@
                                     <div class="main-main" >
                                         <div class="question">
                                             <el-avatar src="https://i.loli.net/2020/07/30/3ciFzRunxrTb1LJ.png"></el-avatar>
-                                            <b>1.请问您的年龄处于（    ）。</b>
+                                            <b>6.假如您前期用25元购入一只股票。该股现在升到30元，而根据预测该股近期有一半机会升到35元，另一半机会跌到25元，您现在会（    ）。</b>
                                         </div>
                                         <div class="answer" >
                                             <div>
-                                                <el-radio v-model="radio1" label="1"  border>30岁以下</el-radio>
-                                                <el-radio v-model="radio1" label="2"  border>31-40岁</el-radio>
+                                                <el-radio v-model="radio1" label="1"  border>A.立刻卖出</el-radio>
+                                                <el-radio v-model="radio1" label="2"  border>B.部分卖出</el-radio>
                                             </div>
                                             <div>
-                                                <el-radio v-model="radio1" label="3" border>41-50岁</el-radio>
-                                                <el-radio v-model="radio1" label="4" border>51-60岁</el-radio>
+                                                <el-radio v-model="radio1" label="3" border>C.继续持有</el-radio>
+                                                <el-radio v-model="radio1" label="4" border>D.继续买入</el-radio>
                                             </div>
                                         </div>
                                     </div>  
@@ -269,10 +269,10 @@
         lastpage(){
  
           //点击跳转至上次浏览页面
-          this.$router.go(-1)
+          //this.$router.go(-1)
  
           //指定跳转地址
-          //this.$router.replace('/risk_test2')
+          this.$router.replace('/risk_test5')
         },
         nextpage(){
  
@@ -280,7 +280,7 @@
          // this.$router.go(-1)
  
           //指定跳转地址
-          this.$router.replace('/risk_test2')
+          this.$router.replace('/risk_test7')
         }
     }
   }

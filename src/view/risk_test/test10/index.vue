@@ -87,16 +87,16 @@
                                     <div class="main-main" >
                                         <div class="question">
                                             <el-avatar src="https://i.loli.net/2020/07/30/3ciFzRunxrTb1LJ.png"></el-avatar>
-                                            <b>1.请问您的年龄处于（    ）。</b>
+                                            <b>10.您的投资经验可以被概括为（    ）。</b>
                                         </div>
                                         <div class="answer" >
                                             <div>
-                                                <el-radio v-model="radio1" label="1"  border>30岁以下</el-radio>
-                                                <el-radio v-model="radio1" label="2"  border>31-40岁</el-radio>
+                                                <el-radio v-model="radio1" label="1"  border>A.有限：除银行活期账户和定期存款外，我基本没有其他投资经验</el-radio>
+                                                <el-radio v-model="radio1" label="2"  border>B.一般：除银行活期账户和定期存款外，我购买过基金、保险等理财产品，但还需要进一步的指导</el-radio>
                                             </div>
                                             <div>
-                                                <el-radio v-model="radio1" label="3" border>41-50岁</el-radio>
-                                                <el-radio v-model="radio1" label="4" border>51-60岁</el-radio>
+                                                <el-radio v-model="radio1" label="3" border>C.丰富：我是一位有经验的投资者，参与过股票、基金等产品的交易，并倾向于自己做出投资决策</el-radio>
+                                                <el-radio v-model="radio1" label="4" border>D.非常丰富：我是一位非常有经验的投资者，参与过权证、期货或创业板等高风险产品的交易</el-radio>
                                             </div>
                                         </div>
                                     </div>  
@@ -269,10 +269,10 @@
         lastpage(){
  
           //点击跳转至上次浏览页面
-          this.$router.go(-1)
+          //this.$router.go(-1)
  
           //指定跳转地址
-          //this.$router.replace('/risk_test2')
+          this.$router.replace('/risk_test9')
         },
         nextpage(){
  
@@ -280,7 +280,7 @@
          // this.$router.go(-1)
  
           //指定跳转地址
-          this.$router.replace('/risk_test2')
+          this.$router.replace('/result')
         }
     }
   }
