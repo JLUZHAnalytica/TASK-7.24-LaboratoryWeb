@@ -161,7 +161,7 @@ ul{
     position: absolute;
     left: 996px;
     width: 80px;
-    top: 4999px;
+    top: 499px;
 }
 .right_answer li{
     float: left;
@@ -182,6 +182,7 @@ ul{
     padding-bottom: 56px;
     position: absolute;
     top: 38px;
+    text-align: center;
 }
 .li img{
     position: absolute;
