@@ -68,7 +68,7 @@
                          <p class="text_wt">回答正确啦 !</p>
                     </div>
                     <el-button type="primary" class="btn" label="下一题" primary @click="restart" v-if="questionIndex < questions.length - 1"> 下一题</el-button>
-                    <h3 v-if="questionIndex === questions.length - 1">已完成最后一题：你的得分是：{{ score }}</h3>
+                    <div class="result" v-if="questionIndex === questions.length - 1">已完成最后一题 ! 你的得分是：{{ score }} 分</div>
                 </div>
                 </li>
             </ul>
@@ -207,7 +207,12 @@ ul{
     right: 107px;
     top: 539px;
 }
-
+.result{
+    width: 417px;
+    position: absolute;
+    left: 614px;
+    top: 378px;
+}
 </style>
 <script>
 

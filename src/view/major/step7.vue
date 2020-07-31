@@ -199,7 +199,7 @@ button.up_10{
     z-index: 1;
     position: absolute;
     bottom: 0; 
-    left: 510px;
+    left: 600px;
     width:231px;
     height:50px;
     top:392px;
@@ -208,7 +208,7 @@ button.down_10{
     z-index: 1;
     position: absolute;
     bottom: 0; 
-    left: 750px;
+    left: 840px;
     width:231px;
     height:50px;
     top:392px;
