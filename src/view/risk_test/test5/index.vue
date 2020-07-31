@@ -2,7 +2,7 @@
     <div >
         <el-container>
             <el-header style="height: 100px;padding:0px">
-                <el-image style="width: 1700px; height: 100px" :src="url1" :fit="fit" ></el-image>
+                <el-image style="width: 1700px; height: 100px" :src="url1"  ></el-image>
             </el-header>
             <el-main>
                 <div class="main-box" id="main" style="width:1500px">
@@ -84,34 +84,30 @@
                                 </div>
                                 <div class="main" id="right" style="height:800px;width:1200px;float:left;">    
                                     <i><b font-size:40px>风险承受能力评估问卷</b></i>
-                                    <div class="result" id="main">
-                                        <div class="result-word" id="left" style="height:400px;width:1500;float:left;">
-                                            <div class="main-main" >
-                                                <div class="question">
-                                                    <el-avatar src="https://i.loli.net/2020/07/30/3ciFzRunxrTb1LJ.png"></el-avatar>
-                                                    <b>您的风险承受能力评级属于</b>
-                                                </div>
-                                                <div class="answer" >
-                                                    <p>此类投资者对于投资产品的任何下跌都不愿意接受，甚至不能承受极小的资产波动。属于风险厌恶型的投资者， 首要目的是保持投资的稳定性与资产的保值，这类投资者需要注意为达到上述目标回报率可能很低，以换取本金免于受损和较高的流动性。</p>
-                                                </div>
+                                    <div class="main-main" >
+                                        <div class="question" >
+                                            <el-avatar src="https://i.loli.net/2020/07/30/3ciFzRunxrTb1LJ.png"></el-avatar>
+                                            <b>5.假设有两种不同的投资：投资A预期获得5%的收益，有可能承担非常小的损失；投资B预期获得20%的收益，但有可能面临25%甚至更高的亏损。您将您的投资资产分配为（    ）。</b>
+                                        </div>
+                                        <div class="answer" >
+                                            <div>
+                                                <el-radio v-model="radio1" label="1"  border>A.全部投资于A</el-radio>
+                                                <el-radio v-model="radio1" label="2"  border>B.大部分投资于A</el-radio>
+                                            </div>
+                                            <div>
+                                                <el-radio v-model="radio1" label="3" border>C.两种投资各一半</el-radio>
+                                                <el-radio v-model="radio1" label="4" border>D.大部分投资于B</el-radio>
+                                            </div>
+                                            <div>
+                                                <el-radio v-model="radio1" label="5" border>E.全部投资于B</el-radio>
                                             </div>
                                         </div>
-                                        <div class="result-picture" id="right" style="height:500px;width:400px;float:left;">
-                                            <div class="picture">
-                                                <el-image style="width: 400px; height: 200px" :src="url2" :fit="fit" ></el-image>
-                                            </div>
-                                            <div class="botton">
-                                            <el-button-group>
-                                                <a href="#/risk_test1">
-                                                    <el-button type="primary" icon="el-icon-arrow-left">重新测试</el-button>
-                                                </a>
-                                                <a href="#/home">
-                                                    <el-button type="primary">确定<i class="el-icon-arrow-right el-icon--right"></i></el-button>
-                                                </a>
-                                            </el-button-group> 
-                                        </div>
-                                        </div> 
-                                        
+                                    </div>  
+                                    <div class="botton">
+                                        <el-button-group>
+                                            <el-button @click="lastpage" type="primary" icon="el-icon-arrow-left">上一页</el-button>
+                                            <el-button @click="nextpage" type="primary">下一页<i class="el-icon-arrow-right el-icon--right"></i></el-button>
+                                        </el-button-group> 
                                     </div>
                                 </div>
                 </div>
@@ -152,37 +148,25 @@
         font-size: 30px;
         text-align:left;
         background-color: #ffffff;
-        left: 80px;
-        top: 60px;
+        left: 40px;
+        top: 40px;
         position: relative;
+        width:1100px;
     }
     .main-main{
         background-color: #ffffff;
         height:500px;
-        width:700px;
         
-    }
-    .result-picture{
-        background-color: #ffffff;
     }
     .answer{
         background-color: #ffffff;
-        font-size: 15px;
-        top: 100px;
-        position: relative;
-        width: 500px;
-        left:100px;
-        line-height: 1.3;
-    }
-    .picture{
-        top: 60px;
+        font-size: 40px;
+        top: 30px;
         position: relative;
     }
     .botton{
         text-align:right;
         background-color: #ffffff;
-        top: 190px;
-        position: relative;
     }
     .main{
         background: #D3DCE6
@@ -225,7 +209,8 @@
             height: 40px;
             position: absolute;
             background-color: #e0e0e0;
-            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2); 
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2);
+         
             width: 3px;
             top: 33px;
             left: 0;
@@ -275,10 +260,32 @@
   export default {
     data () {
       return {
+        radio1: '1',
+        radio2: '1',
+        radio3: '1',
+        radio4: '1',
+        radio5: '1',
         url: 'https://i.loli.net/2020/07/28/JTvZjiX2bwEL7uU.png',
         url1:'https://i.loli.net/2020/07/28/ymPxdFMNkiRtzJY.png',
-        url2:'https://i.loli.net/2020/07/30/MPstTz6AHXWaNG4.png'
         } 
+    },
+    methods:{
+        lastpage(){
+ 
+          //点击跳转至上次浏览页面
+          //this.$router.go(-1)
+ 
+          //指定跳转地址
+          this.$router.replace('/risk_test4')
+        },
+        nextpage(){
+ 
+          //点击跳转至上次浏览页面
+         // this.$router.go(-1)
+ 
+          //指定跳转地址
+          this.$router.replace('/risk_test6')
+        }
     }
   }
 </script>

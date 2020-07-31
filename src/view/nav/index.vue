@@ -17,13 +17,13 @@
             <div class="el-dialog-btn"  style="margin-left: 10px;margin-right: -10px;">
               <el-row :gutter="20" >
                 <el-col :span="10">
-                  <router-link to="/main/teach">
+                  <router-link to="/home">
                     <el-image :src="images[5]"></el-image>
                     <el-image :src="images[9]" style="position: absolute;top: 14%;left: 15%;"></el-image>
                   </router-link>
                 </el-col>
                 <el-col :span="10">
-                  <router-link to="/main/test">
+                  <router-link to="/risk_test1">
                     <el-image :src="images[6]"></el-image>
                     <el-image :src="images[8]" style="position: absolute;top: 14%;left: 57%;"></el-image>
                   </router-link>

@@ -97,6 +97,17 @@ export default {
 .con{
     height: 355px;
 }
+span.big_cont_12{
+    z-index: 1;
+    position: absolute; 
+    line-height: 22px;
+    left: 45px;
+    color:white;
+    width: 710px;
+    height:70px;
+    top: 110px;
+    font-size: 15px;
+}
 span.big_content_1{
     z-index: 1;
     position: absolute; 
@@ -182,7 +193,7 @@ button.up_12{
     z-index: 1;
     position: absolute;
     bottom: 0; 
-    left: 510px;
+    left: 600px;
     width:231px;
     height:50px;
     top:392px;
@@ -191,7 +202,7 @@ button.down_12{
     z-index: 1;
     position: absolute;
     bottom: 0; 
-    left: 750px;
+    left: 830px;
     width:231px;
     height:50px;
     top:392px;

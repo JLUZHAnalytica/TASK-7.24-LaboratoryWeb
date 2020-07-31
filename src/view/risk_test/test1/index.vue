@@ -2,7 +2,7 @@
     <div >
         <el-container>
             <el-header style="height: 100px;padding:0px">
-                <el-image style="width: 1700px; height: 100px" :src="url1" :fit="fit" ></el-image>
+                <el-image style="width: 1700px; height: 100px" :src="url1"  ></el-image>
             </el-header>
             <el-main>
                 <div class="main-box" id="main" style="width:1500px">
@@ -102,8 +102,8 @@
                                     </div>  
                                     <div class="botton">
                                         <el-button-group>
-                                            <el-button type="primary" icon="el-icon-arrow-left">上一页</el-button>
-                                            <el-button type="primary">下一页<i class="el-icon-arrow-right el-icon--right"></i></el-button>
+                                            <el-button @click="lastpage" type="primary" icon="el-icon-arrow-left">上一页</el-button>
+                                            <el-button @click="nextpage" type="primary">下一页<i class="el-icon-arrow-right el-icon--right"></i></el-button>
                                         </el-button-group> 
                                     </div>
                                 </div>
@@ -148,6 +148,7 @@
         left: 40px;
         top: 40px;
         position: relative;
+        width:1100px;
     }
     .main-main{
         background-color: #ffffff;
@@ -263,6 +264,24 @@
         url: 'https://i.loli.net/2020/07/28/JTvZjiX2bwEL7uU.png',
         url1:'https://i.loli.net/2020/07/28/ymPxdFMNkiRtzJY.png',
         } 
+    },
+    methods:{
+        lastpage(){
+ 
+          //点击跳转至上次浏览页面
+          this.$router.go(-1)
+ 
+          //指定跳转地址
+          //this.$router.replace('/risk_test2')
+        },
+        nextpage(){
+ 
+          //点击跳转至上次浏览页面
+         // this.$router.go(-1)
+ 
+          //指定跳转地址
+          this.$router.replace('/risk_test2')
+        }
     }
   }
 </script>

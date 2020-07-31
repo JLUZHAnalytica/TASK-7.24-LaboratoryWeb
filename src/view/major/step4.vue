@@ -12,14 +12,18 @@
         <span class="con_in"><p>In:</p></span>
         <span class="con_out"><p>Out:</p></span>
         <el-row class="opera">
-            <el-button class="up_8" type="primary">上一步</el-button>
-            <el-button class="down_8" type="primary">下一步</el-button>
+            <a href="#/step3">
+            <el-button class="up_4" type="primary">上一步</el-button>
+            </a>
+            <a href="#/step4_1">
+            <el-button class="down_4" type="primary">下一步</el-button>
+            </a>
         </el-row>
         <el-button class="go_8" type="primary">运行</el-button>
         <a href="#/nav">
         <el-button plain class="return">返回</el-button>
         </a>
-        <el-row :inline="true">
+        <el-row :inline="true" style="left: 280px;width: 200px">
             <div class="all_input" >
                 <div class="input_1">
                 <el-col :span="11">
@@ -38,7 +42,7 @@
                     type="textarea"
                     :rows="19"
                     placeholder=""
-                    style="margin-left: 32px"
+                    style="margin-left: 80px"
                     v-model="textarea2">
                     </el-input>
                 </div>
@@ -142,6 +146,17 @@ export default {
 .con{
     height: 355px;
 }
+span.big_cont{
+    z-index: 1;
+    position: absolute; 
+    line-height: 22px;
+    left: 45px;
+    color:white;
+    width: 200px;
+    height:70px;
+    top: 110px;
+    font-size: 15px;
+}
 span.big_content_1{
     z-index: 1;
     position: absolute; 
@@ -197,21 +212,21 @@ img.img_7{
     z-index: 1;
     position: absolute; 
     bottom: 0; 
-    left: 193px;
+    left: 260px;
     color: white;
     width:150px;
     height:70px;
-    top:80px;
+    top: 100px;
 }
 .con_out{
     z-index: 1;
     position: absolute; 
     bottom: 0; 
-    left: 680px;
+    left: 730px;
     color: white;
     width:150px;
     height:70px;
-    top:80px;
+    top: 100px;
 }
 /* .opera{
     z-index: 1;
@@ -222,25 +237,25 @@ img.img_7{
     height:50px;
     top: 27px;
 } */
-button.up_8{
+button.up_4{
     z-index: 1;
     position: absolute;
     bottom: 0; 
-    left: 600px;
+    left: 590px;
     width:231px;
     height:50px;
-    top:400px;
+    top:420px;
 }
-button.down_8{
+button.down_4{
     z-index: 1;
     position: absolute;
     bottom: 0; 
     left: 830px;
     width:231px;
     height:50px;
-    top: 400px;
+    top: 420px;
 }
-.go_8{
+button.go_8{
     z-index: 1;
     position: absolute;
     bottom: 0; 
