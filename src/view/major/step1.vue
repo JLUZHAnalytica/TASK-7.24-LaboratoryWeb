@@ -19,7 +19,7 @@
         <a href="#/nav">
         <el-button plain class="return">返回</el-button>
         </a>
-        <el-row :inline="true">
+        <el-row :inline="true" style="left: 280px;width: 200px">
             <div class="all_input" >
                 <div class="input_1">
                 <el-col :span="11">
@@ -39,7 +39,7 @@
                     type="textarea"
                     :rows="19"
                     placeholder=""
-                    style="margin-left: 32px"
+                    style="margin-left: 80px"
                     v-model="textarea2">
                     </el-input>
                 </div>
@@ -100,6 +100,7 @@ export default {
 
 
 <style scoped>
+
 .big_back{
     position: absolute;
     top:0;
@@ -213,21 +214,21 @@ img.img_7{
     z-index: 1;
     position: absolute; 
     bottom: 0; 
-    left: 193px;
+    left: 260px;
     color: white;
     width:150px;
     height:70px;
-    top:80px;
+    top: 100px;
 }
 .con_out{
     z-index: 1;
     position: absolute; 
     bottom: 0; 
-    left: 680px;
+    left: 730px;
     color: white;
     width:150px;
     height:70px;
-    top:80px;
+    top: 100px;
 }
 /* .opera{
     z-index: 1;
