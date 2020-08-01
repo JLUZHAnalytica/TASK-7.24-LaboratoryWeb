@@ -83,7 +83,7 @@
               </div>
               <div class="answer">
                 <div v-for="(item,i) in question[index].opt" :key="i">
-                  <el-radio v-model="radio1" :label="i" border>{{item}}</el-radio>
+                  <el-radio v-model="radio1" :label="i" border >{{item}}</el-radio>
                 </div>
               </div>
             </div>
@@ -247,6 +247,7 @@ ol.steps li.step-end .step-line {
         url: 'https://i.loli.net/2020/07/28/JTvZjiX2bwEL7uU.png',
         url1:'https://i.loli.net/2020/07/28/ymPxdFMNkiRtzJY.png',
         index:0,
+        optList:[],
         question:[
             {que:"请问您的年龄处于（    ）。",opt:["30岁以下","31-40岁","41-50岁","51-60岁","60岁以上"]},
             {que:"您家庭预计进行证券投资的资金占家庭现有总资产（不含自住、自用房产及汽车等固定资产）的比例是（    ）。",opt:["70%以上","50%-70%","30%-50%","10%-30%","10%以下"]},
