@@ -219,6 +219,9 @@ ol.steps li.step-end .step-line {
         if(this.index<10){
           this.index+=1
         }
+        else{
+          this.nextpage()
+        }
       },
       sub() {
         if(this.index>0){
@@ -238,7 +241,7 @@ ol.steps li.step-end .step-line {
           //点击跳转至上次浏览页面
          // this.$router.go(-1)
           //指定跳转地址
-          this.$router.replace('/risk_test2')
+          this.$router.replace('/result')
         },
         getQA(score){
                 console.log(score);
