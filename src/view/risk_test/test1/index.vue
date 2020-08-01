@@ -9,64 +9,16 @@
           <div class="aside" id="left" style="height:750px;width:100px;float:left;">
             <div id="left">
               <ol class="steps">
-                <li class="step-active">
+                <li class="step-active" v-for="i in index+1" :key="i">
                   <div class="step-line"></div>
                   <div class="step-content">
-                    <span class="step-num">1</span>
+                    <span class="step-num">{{i}}</span>
                   </div>
                 </li>
-                <li class="step-active">
+                <li  v-for="i in (9-index)" :key="i+index+1">
                   <div class="step-line"></div>
                   <div class="step-content">
-                    <span class="step-num">2</span>
-                  </div>
-                </li>
-                <li class="step-active">
-                  <div class="step-line"></div>
-                  <div class="step-content">
-                    <span class="step-num">3</span>
-                  </div>
-                </li>
-                <li class="step-active">
-                  <div class="step-line"></div>
-                  <div class="step-content">
-                    <span class="step-num">4</span>
-                  </div>
-                </li>
-                <li class="step-active">
-                  <div class="step-line"></div>
-                  <div class="step-content">
-                    <span class="step-num">5</span>
-                  </div>
-                </li>
-                <li class="step-active">
-                  <div class="step-line"></div>
-                  <div class="step-content">
-                    <span class="step-num">6</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="step-line"></div>
-                  <div class="step-content">
-                    <span class="step-num">7</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="step-line"></div>
-                  <div class="step-content">
-                    <span class="step-num">8</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="step-line"></div>
-                  <div class="step-content">
-                    <span class="step-num">9</span>
-                  </div>
-                </li>
-                <li class="step-end">
-                  <div class="step-line"></div>
-                  <div class="step-content">
-                    <span class="step-num">10</span>
+                    <span class="step-num">{{i+index+1}}</span>
                   </div>
                 </li>
               </ol>
