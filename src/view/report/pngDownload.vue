@@ -71,7 +71,7 @@
 </template>
 <script>
 import html2canvas from 'html2canvas';
-import {downloadPng} from "./report"
+//import {downloadPng} from "./report"
 
 export default {
     data(){
@@ -97,8 +97,10 @@ export default {
         }
     },
     methods:{
-        downloadPng:downloadPng(),
-        takePhoto() {
+        //downloadPng:downloadPng(),
+
+    },
+    mounted(){
             html2canvas(this.$refs.downloadImage,{
                 backgroundColor: "#ffffff",  //取消图片白边问题
                 useCORS: true,  //如果是动态加载的图片 获取图片
@@ -106,16 +108,16 @@ export default {
                 let dataurl = canvas.toDataURL("image/png");
                 this.dataURL = dataurl;
             });
-        },
-    },
-    mounted(){
-        this.takePhoto()
-        this.downloadPng
+        //this.downloadPng
 
         //this.$nextTick(() => {
         //this.$refs['btn'].$el.click()
         //})
-        console.log("11")        
+
+      
+    },
+    updated(){
+        this.$refs.btn.click()        
     }
 
 }
