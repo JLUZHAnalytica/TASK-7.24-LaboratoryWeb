@@ -34,24 +34,18 @@
                         <div class="tMsg">
                             <div>
                                 <!--实验数据-->
-                                <template>
-                                    <el-table
-                                        :data="tableData"
-                                        stripe
-                                        style="width: auto"
-                                        :show-header="showHeader">
-                                        <el-table-column
-                                        prop="lesson"
-                                        label=""
-                                        width="180">
-                                        </el-table-column>
-                                        <el-table-column
-                                        prop="score"
-                                        label=""
-                                        width="180">
-                                        </el-table-column>
-                                    </el-table>
-                                </template>
+                                <table>
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                 </tr>
+                                </thead>
+                                <tr v-for="item in tableData" :key="item.lesson">
+                                    <td>{{item.lesson}}</td>
+                                    <td>{{item.score}}</td>
+                                </tr>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -62,7 +56,7 @@
                             <p class="ctitle">心得体会</p>
                         </div>
                         <div class="child-msgBox">
-                            <p>{{ParentStr}}</p>
+                            <p>{{delivermsg}}</p>
                         </div>
                     </div>
                 </div>
@@ -88,10 +82,11 @@ export default {
             score: '100',
             }],
             dataURL:"",
+            i:0,
         }
     },
     props: {
-        ParentStr:{
+        delivermsg:{
             type:String,
             default:"this is default"
         }
@@ -104,6 +99,7 @@ export default {
             html2canvas(this.$refs.downloadImage,{
                 backgroundColor: "#ffffff",  //取消图片白边问题
                 useCORS: true,  //如果是动态加载的图片 获取图片
+                height:900,//修改高度
             }).then((canvas) => {
                 let dataurl = canvas.toDataURL("image/png");
                 this.dataURL = dataurl;
@@ -113,11 +109,15 @@ export default {
         //this.$nextTick(() => {
         //this.$refs['btn'].$el.click()
         //})
-
+        console.log("钩子函数 mounted") 
       
     },
     updated(){
-        this.$refs.btn.click()        
+        if(this.i==1){
+        this.$refs.btn.click()            
+        }
+        this.i+=1
+        console.log("钩子函数 updataed")        
     }
 
 }
