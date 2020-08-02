@@ -34,7 +34,7 @@
                     :key="option"
                     :class="{selected: isSelected(question, index)}"
                     @click="doOption(index)" >{{ option }}
-                    <img class="Aimg"  v-if="index === 0"    src="img/icon_eaxm_nor.png" alt="未选中">
+                    <img class="Aimg"  v-if="index === 0" src="img/icon_eaxm_nor.png" alt="未选中">
                     <img class="Bimg"  v-if="index === 1" src="img/icon_eaxm_nor.png" alt="未选中">
                     <img class="Cimg"  v-if="index === 2" src="img/icon_eaxm_nor.png" alt="未选中">
                     <img class="Dimg"  v-if="index === 3" src="img/icon_eaxm_nor.png" alt="未选中">
@@ -43,7 +43,6 @@
                     <img class="Cimg"  v-if="index === 2 && isSelected(question, index)"    src="img/icon_eaxm_select.png" alt="选中">
                     <img class="Dimg"  v-if="index === 3 && isSelected(question, index)"    src="img/icon_eaxm_select.png" alt="选中">
                 </li>
-    
             </ul>
             <div class="op">
                 <!-- <button class="btn" label="上一题" @click="prevQuestion" :disabled="questionIndex === 0" /> -->
@@ -57,13 +56,19 @@
                     <div class="wrong" v-if="!isSuccess(question)">
                         <img class="icon_wt" src="img/icon-wrong.png" alt="">
                            <p class="text_wt">回答错误，正确答案为：</p>
-                        <div class="right_answer">
+                        <div class="right_answer" v-if="question.type === 'multiple'">
                              <li v-for="answer in question.answer" :key="answer">
                              {{ numberToLetter(answer) }} 
                             </li>!
                         </div>
+                        <div class="right_answer" v-if="question.type === 'single'">
+                             <li>
+                             {{ numberToLetter(question.answer) }} 
+                            </li>!
+                        </div>
+
                     </div>
-                    <div class="right" v-if="isSuccess(question)">
+                    <div class="right" v-if=" isSuccess(question)">
                         <img class="icon_wt" src="img/icon-ture.png" alt="">
                          <p class="text_wt">回答正确啦 !</p>
                     </div>
@@ -265,32 +270,32 @@ export default {
                         id: '1',
                         type: 'single',
                         content: '1.一般地，投资者风险偏好值越大，表明其对于风险的承受能力更强，在投资时可能更加激进',
-                        options: ['A.正确', 'B.错误'],
-                        answer: [0],
+                        options: ['A.错误', 'B.正确'],
+                        answer: 1,
                         userAnswer: null
                     },
                     {
                         id: '1',
                         type: 'single',
                         content: '2.行为金融学的相关研究表明，用户往往会夸大自己的风险偏好，尤其适用于那些受过良好教育的，过于自信的男性投资者。',
-                        options: ['A.正确', 'B.错误'],
-                        answer: [0],
+                        options: ['A.错误', 'B.正确'],
+                        answer: 1,
                         userAnswer: null
                     },
                     {
                         id: '1',
                         type: 'single',
                         content: '3.降低投资风险的最佳方式就是进行分散投资，而不是单独投资于某一资产，即“不要把所有的鸡蛋放进一个篮子里”',
-                        options: ['A.正确', 'B.错误'],
-                        answer: [0],
+                        options: ['A.错误', 'B.正确'],
+                        answer: 1,
                         userAnswer: null
                     },    
                     {
                         id: '1',
                         type: 'single',
                         content: '4.如果用户的风险偏好较高，即更加注重收益，那么投资组合处于有效前沿末端部分；如果风险偏好较低，即更加注重风险，那么投资组合处于有效前沿的前端部分',
-                        options: ['A.正确', 'B.错误'],
-                        answer: [0],
+                        options: ['A.错误', 'B.正确'],
+                        answer: 1,
                         userAnswer: null
                     },                                                                                  
                     {
@@ -298,15 +303,15 @@ export default {
                         type: 'single',
                         content: '5.资产配置时，对相关性较高的资产进行组合，能够有效对冲风险。',
                         options: ['A.正确', 'B.错误'],
-                        answer: [1],
+                        answer: 1,
                         userAnswer: null
                     },  
                     {
                         id: '1',
                         type: 'single',
                         content: '6.随着证券数量的增加，虽然组合的平均收益不会有所影响，但是组合标准差会随证券数量的增多而降低。',
-                        options: ['A.正确', 'B.错误'],
-                        answer: [0],
+                       options: ['A.错误', 'B.正确'],
+                        answer: 1,
                         userAnswer: null
                     },  
                     {
@@ -314,15 +319,15 @@ export default {
                         type: 'single',
                         content: '7.对于风险承受能力较低的投资者，往往投资权益类资产的权重相对较大。',
                         options: ['A.正确', 'B.错误'],
-                        answer: [1],
+                        answer: 1,
                         userAnswer: null
                     },  
                     {
                         id: '1',
                         type: 'single',
                         content: '8.风险较大的投资，其要求的收益率相对较高；反之，预期收益率较低的投资，风险也相对较小。',
-                        options: ['A.正确', 'B.错误'],
-                        answer: [0],
+                        options: ['A.错误', 'B.正确'],
+                        answer: 1,
                         userAnswer: null
                     },  
                     {
@@ -330,7 +335,7 @@ export default {
                         type: 'single',
                         content: '9.非系统性风险也叫不可分散风险，不能通过投资组合进行分散。',
                         options: ['A.正确', 'B.错误'],
-                        answer: [1],
+                        answer: 1,
                         userAnswer: null
                     },  
                     {
@@ -338,7 +343,7 @@ export default {
                         type: 'single',
                         content: '10.系统性风险也被称为可分散风险，可以通过投资组合进行分散。',
                         options: ['A.正确', 'B.错误'],
-                        answer: [1],
+                        answer: 1,
                         userAnswer: null
                     },  
                 ],
@@ -400,9 +405,6 @@ export default {
       this.question = this.questions[this.questionIndex]
   },
    methods: {
-      boolToText(bool) {
-        return bool ? '正确' : '错误'
-      },
         isSelected(question, index) {
                 if (question.type === 'multiple') {
                     if (!question.userAnswer) {
@@ -436,10 +438,12 @@ export default {
                     return true
                 }
                 if (question.type === 'single') {
-                     if (question.userAnswer === question.answer){
-                        return question.userAnswer === question.answer
-                     }
+                        if (question.answer !== question.userAnswer) {
+                            return false
+                        }
+                    return true
                 }
+
                 return false
             },
             doOption(index) {
