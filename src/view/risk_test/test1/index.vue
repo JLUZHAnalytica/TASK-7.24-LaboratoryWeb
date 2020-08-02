@@ -46,7 +46,7 @@
                   下一页
                   <i class="el-icon-arrow-right el-icon--right"></i>
                 </el-button>
-                <p @click="getQA(score)">{{score}}</p>
+                <!-- <p @click="getQA(score)">{{score}}</p> -->
               </el-button-group>
             </div>
           </div>
@@ -73,7 +73,6 @@
   text-align: center;
   line-height: 80px;
   font-size: 40px;
-  left: 170px;
   position: relative;
 }
 .aside {
