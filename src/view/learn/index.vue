@@ -45,7 +45,7 @@
   top: 0px;
   left: 0px;
 }
-.learn{
+/* .learn{
     width: 250px;
     position: absolute;
     right: 480px;
@@ -56,7 +56,7 @@
     position: absolute;
     right: 280px;
     top: 19px;
-}
+} */
 .return_main{
     text-decoration:none;
     width: 119px;

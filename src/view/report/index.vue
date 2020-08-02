@@ -102,13 +102,14 @@
         </div>
         <button v-show="isShow" @click="onSubmit" class="bt-submit">提交</button>    
                 <!--拍照部分结束-->
+        <!--my-child :delivermsg="textmsg"></my-child>-->
     </div>
 </template>
 <script>
-//import child from "./pngDownload"
+//import MyChild from "./pngDownload"
 export default {
     components: {
-        //child,
+        //MyChild,
     },
     data(){
         return{
